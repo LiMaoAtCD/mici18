@@ -22,6 +22,20 @@
 		87CF13831A50FF56009A9B2E /* LeftSideCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CF13801A50FF56009A9B2E /* LeftSideCell.swift */; };
 		87CF13841A50FF56009A9B2E /* LeftSideCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87CF13811A50FF56009A9B2E /* LeftSideCell.xib */; };
 		87CF13851A50FF56009A9B2E /* LeftSideCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87CF13811A50FF56009A9B2E /* LeftSideCell.xib */; };
+		87CF13881A514D8E009A9B2E /* AvatarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CF13871A514D8E009A9B2E /* AvatarViewController.swift */; };
+		87CF13891A514D8E009A9B2E /* AvatarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CF13871A514D8E009A9B2E /* AvatarViewController.swift */; };
+		87CF138B1A515D3D009A9B2E /* GuaranteeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CF138A1A515D3D009A9B2E /* GuaranteeViewController.swift */; };
+		87CF138C1A515D3D009A9B2E /* GuaranteeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CF138A1A515D3D009A9B2E /* GuaranteeViewController.swift */; };
+		87CF138E1A515E1C009A9B2E /* RecycleScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CF138D1A515E1C009A9B2E /* RecycleScheduleViewController.swift */; };
+		87CF138F1A515E1C009A9B2E /* RecycleScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CF138D1A515E1C009A9B2E /* RecycleScheduleViewController.swift */; };
+		87CF13911A515E2E009A9B2E /* CouponViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CF13901A515E2E009A9B2E /* CouponViewController.swift */; };
+		87CF13921A515E2E009A9B2E /* CouponViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CF13901A515E2E009A9B2E /* CouponViewController.swift */; };
+		87CF13941A515E40009A9B2E /* EnshrineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CF13931A515E40009A9B2E /* EnshrineViewController.swift */; };
+		87CF13951A515E40009A9B2E /* EnshrineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CF13931A515E40009A9B2E /* EnshrineViewController.swift */; };
+		87CF13971A515E9D009A9B2E /* ContributeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CF13961A515E9D009A9B2E /* ContributeViewController.swift */; };
+		87CF13981A515E9D009A9B2E /* ContributeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CF13961A515E9D009A9B2E /* ContributeViewController.swift */; };
+		87CF139A1A515EAF009A9B2E /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CF13991A515EAF009A9B2E /* SettingViewController.swift */; };
+		87CF139B1A515EAF009A9B2E /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CF13991A515EAF009A9B2E /* SettingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +66,13 @@
 		879F6C0D1A4C479900984C1E /* LeftSideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftSideViewController.swift; sourceTree = "<group>"; };
 		87CF13801A50FF56009A9B2E /* LeftSideCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftSideCell.swift; sourceTree = "<group>"; };
 		87CF13811A50FF56009A9B2E /* LeftSideCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeftSideCell.xib; sourceTree = "<group>"; };
+		87CF13871A514D8E009A9B2E /* AvatarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarViewController.swift; sourceTree = "<group>"; };
+		87CF138A1A515D3D009A9B2E /* GuaranteeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuaranteeViewController.swift; sourceTree = "<group>"; };
+		87CF138D1A515E1C009A9B2E /* RecycleScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecycleScheduleViewController.swift; sourceTree = "<group>"; };
+		87CF13901A515E2E009A9B2E /* CouponViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CouponViewController.swift; sourceTree = "<group>"; };
+		87CF13931A515E40009A9B2E /* EnshrineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnshrineViewController.swift; sourceTree = "<group>"; };
+		87CF13961A515E9D009A9B2E /* ContributeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContributeViewController.swift; sourceTree = "<group>"; };
+		87CF13991A515EAF009A9B2E /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +153,7 @@
 		879F6C0C1A4C00E400984C1E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				87CF13861A514D71009A9B2E /* DetailControllers */,
 				8785A55B1A4B0EF300A9C1E3 /* ContainerViewController.swift */,
 				879F6C0A1A4C00C700984C1E /* CenterTabBarController.swift */,
 				8785A55F1A4B117600A9C1E3 /* FirstViewController.swift */,
@@ -149,6 +171,20 @@
 				87CF13811A50FF56009A9B2E /* LeftSideCell.xib */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		87CF13861A514D71009A9B2E /* DetailControllers */ = {
+			isa = PBXGroup;
+			children = (
+				87CF13871A514D8E009A9B2E /* AvatarViewController.swift */,
+				87CF138A1A515D3D009A9B2E /* GuaranteeViewController.swift */,
+				87CF138D1A515E1C009A9B2E /* RecycleScheduleViewController.swift */,
+				87CF13901A515E2E009A9B2E /* CouponViewController.swift */,
+				87CF13931A515E40009A9B2E /* EnshrineViewController.swift */,
+				87CF13961A515E9D009A9B2E /* ContributeViewController.swift */,
+				87CF13991A515EAF009A9B2E /* SettingViewController.swift */,
+			);
+			name = DetailControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,11 +290,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				8785A55C1A4B0EF300A9C1E3 /* ContainerViewController.swift in Sources */,
+				87CF138B1A515D3D009A9B2E /* GuaranteeViewController.swift in Sources */,
 				877AD8751A4AC2FB000260A3 /* AppDelegate.swift in Sources */,
+				87CF13971A515E9D009A9B2E /* ContributeViewController.swift in Sources */,
 				8785A5621A4B118100A9C1E3 /* SecondViewController.swift in Sources */,
+				87CF139A1A515EAF009A9B2E /* SettingViewController.swift in Sources */,
 				8785A5601A4B117600A9C1E3 /* FirstViewController.swift in Sources */,
 				879F6C051A4BEDFC00984C1E /* RightSideViewController.swift in Sources */,
+				87CF13881A514D8E009A9B2E /* AvatarViewController.swift in Sources */,
+				87CF138E1A515E1C009A9B2E /* RecycleScheduleViewController.swift in Sources */,
+				87CF13911A515E2E009A9B2E /* CouponViewController.swift in Sources */,
 				87CF13821A50FF56009A9B2E /* LeftSideCell.swift in Sources */,
+				87CF13941A515E40009A9B2E /* EnshrineViewController.swift in Sources */,
 				879F6C0E1A4C479900984C1E /* LeftSideViewController.swift in Sources */,
 				879F6C0B1A4C00C700984C1E /* CenterTabBarController.swift in Sources */,
 			);
@@ -270,6 +313,13 @@
 			files = (
 				877AD88B1A4AC2FB000260A3 /* mici18Tests.swift in Sources */,
 				87CF13831A50FF56009A9B2E /* LeftSideCell.swift in Sources */,
+				87CF13921A515E2E009A9B2E /* CouponViewController.swift in Sources */,
+				87CF13891A514D8E009A9B2E /* AvatarViewController.swift in Sources */,
+				87CF138C1A515D3D009A9B2E /* GuaranteeViewController.swift in Sources */,
+				87CF139B1A515EAF009A9B2E /* SettingViewController.swift in Sources */,
+				87CF138F1A515E1C009A9B2E /* RecycleScheduleViewController.swift in Sources */,
+				87CF13951A515E40009A9B2E /* EnshrineViewController.swift in Sources */,
+				87CF13981A515E9D009A9B2E /* ContributeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

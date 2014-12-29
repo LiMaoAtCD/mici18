@@ -8,6 +8,23 @@
 
 import UIKit
 
+
+enum SelectItems {
+    case avatar
+    case guarantee
+    case recycleSchedule
+    case coupon
+    case enshrine
+    case contribute
+    case setting
+}
+
+
+
+protocol LeftViewControllerDelegate {
+     func selectItem(index: SelectItems)
+}
+
 class LeftSideViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
 
     @IBOutlet weak var creditsLabel: UILabel!
@@ -15,6 +32,8 @@ class LeftSideViewController: UIViewController, UITableViewDelegate,UITableViewD
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var tableView: UITableView!
+    
+    var delegate: LeftViewControllerDelegate?
     
     private let dataItems = [["每日保障", "回收进程查询", "电子优惠券"],
         ["我的收藏", "我要投稿"], ["设置"]]
@@ -31,6 +50,16 @@ class LeftSideViewController: UIViewController, UITableViewDelegate,UITableViewD
         var nib: UINib = UINib(nibName: "LeftSideCell", bundle: NSBundle.mainBundle())
         self.tableView.registerNib(nib, forCellReuseIdentifier: "LeftCell")
         
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        avatarImageView.userInteractionEnabled = true
+        
+        var tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "tapForAlterAvatar:")
+        self.avatarImageView.addGestureRecognizer(tapGesture)
     }
 
     override func didReceiveMemoryWarning() {
@@ -70,6 +99,35 @@ class LeftSideViewController: UIViewController, UITableViewDelegate,UITableViewD
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 60
     }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.tableView.deselectRowAtIndexPath(indexPath, animated: false)
+        
+        if indexPath.section == 0 {
+            if indexPath.row == 0 {
+                delegate?.selectItem(SelectItems.guarantee)
+            } else if indexPath.row == 1 {
+                delegate?.selectItem(SelectItems.recycleSchedule)
+            } else {
+                delegate?.selectItem(SelectItems.coupon)
+            }
+        } else if indexPath.section == 1 {
+            if indexPath.row == 0 {
+                delegate?.selectItem(SelectItems.enshrine)
+            } else {
+                delegate?.selectItem(SelectItems.contribute)
+            }
+        } else {
+            delegate?.selectItem(SelectItems.setting)
+        }
+        
+    }
+    
+    func tapForAlterAvatar(recognizer: UITapGestureRecognizer) {
+        delegate?.selectItem(SelectItems.avatar)
+
+    }
+    
     
   
     

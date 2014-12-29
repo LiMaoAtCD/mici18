@@ -14,7 +14,7 @@ enum SlideOutState {
     case RightPanelExpanded
 }
 
-class ContainerViewController: UIViewController {
+class ContainerViewController: UIViewController, LeftViewControllerDelegate {
     
     var centerVC: CenterTabBarController!
     let screenBounds = UIScreen.mainScreen().bounds
@@ -68,7 +68,7 @@ class ContainerViewController: UIViewController {
         } else {
             
             leftViewController = UIStoryboard.leftViewController()
-            
+            leftViewController?.delegate = self
             self.view.insertSubview(leftViewController!.view, atIndex: 0)
             self.addChildViewController(leftViewController!)
         }
@@ -83,7 +83,7 @@ class ContainerViewController: UIViewController {
             self.currentState = .LeftPanelExpanded
             self.tapForSlide = UITapGestureRecognizer(target: self, action: "handleTapGesture:")
             self.centerVC.view.addGestureRecognizer(self.tapForSlide!)
-            
+            self.translationX = 300
             
         })
     }
@@ -115,6 +115,7 @@ class ContainerViewController: UIViewController {
             var transform: CGAffineTransform = CGAffineTransformMakeScale(0.9, 0.9)
             self.centerVC.view.transform = transform
             self.currentState = .RightPanelExpanded
+            self.translationX = -170
             self.tapForSlide = UITapGestureRecognizer(target: self, action: "handleTapGesture:")
             self.centerVC.view.addGestureRecognizer(self.tapForSlide!)
             
@@ -128,7 +129,7 @@ class ContainerViewController: UIViewController {
             self.centerVC.view.center = CGPointMake(UIScreen.mainScreen().bounds.size.width / 2, UIScreen.mainScreen().bounds.size.height / 2)
             }) { (finished) -> Void in
                 if finished {
-                    
+                    self.translationX = 0
                     self.currentState = .BothCollapsed
                     self.leftViewController?.view.removeFromSuperview()
                     self.leftViewController = nil
@@ -201,7 +202,7 @@ class ContainerViewController: UIViewController {
                 self.rightViewController = nil
                 
                 animateCenterViewControllerToRight()
-                translationX = 300
+                
                 
             } else if translationX < -150 {
                 
@@ -210,11 +211,11 @@ class ContainerViewController: UIViewController {
                 self.leftViewController = nil
                 
                 animateCenterViewControllerToLeft()
-                translationX = -170
+                
             } else {
                 
                 animateCenterViewControllerToCenter()
-                translationX = 0
+                
             }
         }
     }
@@ -224,19 +225,36 @@ class ContainerViewController: UIViewController {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
-    /*
-    // MARK: - Navigation
     
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
+    func selectItem(item: SelectItems){
+        
+        animateCenterViewControllerToCenter()
+        
+        switch item {
+        case .avatar:
+            NSNotificationCenter.defaultCenter().postNotificationName("ALNavatar", object: nil)
+        case .guarantee:
+            NSNotificationCenter.defaultCenter().postNotificationName("ALNguarantee", object: nil)
+        case .recycleSchedule:
+            NSNotificationCenter.defaultCenter().postNotificationName("ALNrecycleSchedule", object: nil)
+        case .enshrine:
+            NSNotificationCenter.defaultCenter().postNotificationName("ALNenshrine", object: nil)
+        case .setting:
+            NSNotificationCenter.defaultCenter().postNotificationName("ALNsetting", object: nil)
+        case .coupon:
+            NSNotificationCenter.defaultCenter().postNotificationName("ALNcoupon", object: nil)
+        case .contribute:
+            NSNotificationCenter.defaultCenter().postNotificationName("ALNcontribute", object: nil)
+        default:
+            break
+        }
+    
     }
-    */
+
     
 }
 
-extension UIStoryboard {
+private extension UIStoryboard {
     class func leftViewController() -> LeftSideViewController{
         return UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LeftSideViewController") as LeftSideViewController
     }
