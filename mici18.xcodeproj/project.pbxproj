@@ -18,6 +18,10 @@
 		879F6C051A4BEDFC00984C1E /* RightSideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879F6C041A4BEDFC00984C1E /* RightSideViewController.swift */; };
 		879F6C0B1A4C00C700984C1E /* CenterTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879F6C0A1A4C00C700984C1E /* CenterTabBarController.swift */; };
 		879F6C0E1A4C479900984C1E /* LeftSideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879F6C0D1A4C479900984C1E /* LeftSideViewController.swift */; };
+		87CF13821A50FF56009A9B2E /* LeftSideCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CF13801A50FF56009A9B2E /* LeftSideCell.swift */; };
+		87CF13831A50FF56009A9B2E /* LeftSideCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CF13801A50FF56009A9B2E /* LeftSideCell.swift */; };
+		87CF13841A50FF56009A9B2E /* LeftSideCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87CF13811A50FF56009A9B2E /* LeftSideCell.xib */; };
+		87CF13851A50FF56009A9B2E /* LeftSideCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87CF13811A50FF56009A9B2E /* LeftSideCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +50,8 @@
 		879F6C041A4BEDFC00984C1E /* RightSideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightSideViewController.swift; sourceTree = "<group>"; };
 		879F6C0A1A4C00C700984C1E /* CenterTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterTabBarController.swift; sourceTree = "<group>"; };
 		879F6C0D1A4C479900984C1E /* LeftSideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftSideViewController.swift; sourceTree = "<group>"; };
+		87CF13801A50FF56009A9B2E /* LeftSideCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftSideCell.swift; sourceTree = "<group>"; };
+		87CF13811A50FF56009A9B2E /* LeftSideCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeftSideCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +93,7 @@
 		877AD8711A4AC2FB000260A3 /* mici18 */ = {
 			isa = PBXGroup;
 			children = (
+				87CF137F1A50FF20009A9B2E /* Views */,
 				879F6C0C1A4C00E400984C1E /* Controllers */,
 				877AD8741A4AC2FB000260A3 /* AppDelegate.swift */,
 				877AD8781A4AC2FB000260A3 /* Main.storyboard */,
@@ -133,6 +140,15 @@
 				879F6C041A4BEDFC00984C1E /* RightSideViewController.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		87CF137F1A50FF20009A9B2E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				87CF13801A50FF56009A9B2E /* LeftSideCell.swift */,
+				87CF13811A50FF56009A9B2E /* LeftSideCell.xib */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				877AD87A1A4AC2FB000260A3 /* Main.storyboard in Resources */,
+				87CF13841A50FF56009A9B2E /* LeftSideCell.xib in Resources */,
 				877AD87F1A4AC2FB000260A3 /* LaunchScreen.xib in Resources */,
 				877AD87C1A4AC2FB000260A3 /* Images.xcassets in Resources */,
 			);
@@ -225,6 +242,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87CF13851A50FF56009A9B2E /* LeftSideCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +258,7 @@
 				8785A5621A4B118100A9C1E3 /* SecondViewController.swift in Sources */,
 				8785A5601A4B117600A9C1E3 /* FirstViewController.swift in Sources */,
 				879F6C051A4BEDFC00984C1E /* RightSideViewController.swift in Sources */,
+				87CF13821A50FF56009A9B2E /* LeftSideCell.swift in Sources */,
 				879F6C0E1A4C479900984C1E /* LeftSideViewController.swift in Sources */,
 				879F6C0B1A4C00C700984C1E /* CenterTabBarController.swift in Sources */,
 			);
@@ -250,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				877AD88B1A4AC2FB000260A3 /* mici18Tests.swift in Sources */,
+				87CF13831A50FF56009A9B2E /* LeftSideCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,7 +15,7 @@ enum SlideOutState {
 }
 
 class ContainerViewController: UIViewController {
-
+    
     var centerVC: CenterTabBarController!
     let screenBounds = UIScreen.mainScreen().bounds
     let CenterVCOffset: CGFloat = 100.0
@@ -23,13 +23,14 @@ class ContainerViewController: UIViewController {
     var leftViewController: LeftSideViewController?
     var rightViewController: RightSideViewController?
     
-    var scaleF: CGFloat? = 0.0
-    let acceleration: CGFloat = 0.3
+    var translationX: CGFloat? = 0.0
     let animationSpeed = 0.3
+    
+    var tapForSlide: UITapGestureRecognizer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         
         centerVC = UIStoryboard.centerViewController()
@@ -40,7 +41,7 @@ class ContainerViewController: UIViewController {
         
         self.addGesturesForSlide()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -70,14 +71,20 @@ class ContainerViewController: UIViewController {
             
             self.view.insertSubview(leftViewController!.view, atIndex: 0)
             self.addChildViewController(leftViewController!)
-            }
+        }
     }
     
     func animateCenterViewControllerToRight() ->Void {
+        
         UIView.animateWithDuration(animationSpeed, animations: { () -> Void in
+            
             self.centerVC.view.center = CGPointMake(UIScreen.mainScreen().bounds.width, UIScreen.mainScreen().bounds.height / 2)
             self.centerVC.view.transform = CGAffineTransformMakeScale(0.8, 0.8)
             self.currentState = .LeftPanelExpanded
+            self.tapForSlide = UITapGestureRecognizer(target: self, action: "handleTapGesture:")
+            self.centerVC.view.addGestureRecognizer(self.tapForSlide!)
+            
+            
         })
     }
     
@@ -100,31 +107,37 @@ class ContainerViewController: UIViewController {
             self.view.insertSubview(rightViewController!.view, atIndex: 0)
             self.addChildViewController(rightViewController!)
         }
-
+        
     }
     func animateCenterViewControllerToLeft() {
         UIView.animateWithDuration(animationSpeed, animations: { () -> Void in
-            self.centerVC.view.center = CGPointMake(UIScreen.mainScreen().bounds.origin.x, UIScreen.mainScreen().bounds.height / 2)
-            var transform: CGAffineTransform = CGAffineTransformMakeScale(0.8, 0.8)
+            self.centerVC.view.center = CGPointMake(UIScreen.mainScreen().bounds.origin.x + self.screenBounds.width / 3.5, self.screenBounds.height / 2)
+            var transform: CGAffineTransform = CGAffineTransformMakeScale(0.9, 0.9)
             self.centerVC.view.transform = transform
             self.currentState = .RightPanelExpanded
+            self.tapForSlide = UITapGestureRecognizer(target: self, action: "handleTapGesture:")
+            self.centerVC.view.addGestureRecognizer(self.tapForSlide!)
+            
         })
-
+        
     }
     func animateCenterViewControllerToCenter() {
         
         UIView.animateWithDuration(animationSpeed, animations: { () -> Void in
             self.centerVC.view.transform = CGAffineTransformScale(CGAffineTransformIdentity,1.0,1.0)
             self.centerVC.view.center = CGPointMake(UIScreen.mainScreen().bounds.size.width / 2, UIScreen.mainScreen().bounds.size.height / 2)
-        }) { (finished) -> Void in
-            if finished {
-                self.currentState = .BothCollapsed
-                self.leftViewController?.view.removeFromSuperview()
-                self.leftViewController = nil
-                self.rightViewController?.view.removeFromSuperview()
-                self.rightViewController = nil
-                self.scaleF = 0
-            }
+            }) { (finished) -> Void in
+                if finished {
+                    
+                    self.currentState = .BothCollapsed
+                    self.leftViewController?.view.removeFromSuperview()
+                    self.leftViewController = nil
+                    self.rightViewController?.view.removeFromSuperview()
+                    self.rightViewController = nil
+                    if let tap = self.tapForSlide {
+                        self.centerVC.view.removeGestureRecognizer(tap)
+                    }
+                }
         }
     }
     
@@ -135,14 +148,13 @@ class ContainerViewController: UIViewController {
         self.centerVC.view.addGestureRecognizer(panForSlide)
         
         
-//        var tapForSlide: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "handleTapGesture:")
-//        self.centerVC.view.addGestureRecognizer(tapForSlide)
         
     }
     
     func handleTapGesture(recognizer: UITapGestureRecognizer) {
         if currentState != .BothCollapsed {
-            self.animateCenterViewControllerToCenter()
+            animateCenterViewControllerToCenter()
+            self.centerVC.view.removeGestureRecognizer(recognizer)
         }
     }
     
@@ -152,67 +164,76 @@ class ContainerViewController: UIViewController {
         
         var point: CGPoint = recognizer.translationInView(self.view)
         
-        scaleF = point.x * acceleration + scaleF!
-      
- 
+        var screenWidth = UIScreen.mainScreen().bounds.width
+        
+        
+        translationX = point.x + translationX!
+        println("translationX: \(translationX)")
+        
         if recognizer.view?.frame.origin.x >= 0 {
             
-                recognizer.view?.center = CGPointMake(recognizer.view!.center.x + point.x * acceleration, recognizer.view!.center.y)
+            recognizer.view?.center = CGPointMake(0.5 * screenWidth + (translationX! / screenWidth) * (screenWidth / 2), recognizer.view!.center.y)
+            
+            recognizer.view?.transform = CGAffineTransformScale(CGAffineTransformIdentity,1 -  0.2 * translationX! / screenWidth , 1 -  0.2 * translationX! / screenWidth)
+            
+            self.addLeftPanelViewController()
+            self.rightViewController?.view.removeFromSuperview()
+            self.rightViewController = nil
+        } else {
+            
+            recognizer.view?.center = CGPointMake(0.5 * screenWidth + (translationX! / screenWidth) * (screenWidth / 2), recognizer.view!.center.y)
+            
+            recognizer.view?.transform = CGAffineTransformScale(CGAffineTransformIdentity,1 +  0.2 * translationX! / screenWidth , 1 +  0.2 * translationX! / screenWidth)
+            
+            self.addRightPanelViewController()
+            self.leftViewController?.view.removeFromSuperview()
+            self.leftViewController = nil
+        }
+        
+        recognizer.setTranslation(CGPointZero, inView: self.view)
+        
+        if recognizer.state == .Ended {
+            
+            if translationX > 150.0 {
                 
-                recognizer.view?.transform = CGAffineTransformScale(CGAffineTransformIdentity,1-(scaleF! / 1000), 1 - scaleF! / 1000)
-                
-                recognizer.setTranslation(CGPointZero, inView: self.view)
                 self.addLeftPanelViewController()
-                
                 self.rightViewController?.view.removeFromSuperview()
                 self.rightViewController = nil
-            
-        } else {
-
-                recognizer.view?.center = CGPointMake(recognizer.view!.center.x + point.x * acceleration ,recognizer.view!.center.y)
-                recognizer.view?.transform = CGAffineTransformScale(CGAffineTransformIdentity,1 + (scaleF! / 1000), 1 + (scaleF! / 1000))
                 
-                recognizer.setTranslation(CGPointZero, inView: self.view)
+                animateCenterViewControllerToRight()
+                translationX = 300
+                
+            } else if translationX < -150 {
                 
                 self.addRightPanelViewController()
-                
                 self.leftViewController?.view.removeFromSuperview()
                 self.leftViewController = nil
-        }
-    
-        switch recognizer.state {
-            
-        case .Ended:
-            println(scaleF)
-            if scaleF! > 140 * acceleration {
-                self.animateCenterViewControllerToRight()
-            } else if (scaleF! < -140 * acceleration) {
-                self.animateCenterViewControllerToLeft()
+                
+                animateCenterViewControllerToLeft()
+                translationX = -170
             } else {
-                self.animateCenterViewControllerToCenter()
-                scaleF = 0
+                
+                animateCenterViewControllerToCenter()
+                translationX = 0
             }
-            
-        default:
-            break
         }
     }
-
+    
     
     deinit{
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
-
+    
     /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
     }
     */
-
+    
 }
 
 extension UIStoryboard {
@@ -225,5 +246,5 @@ extension UIStoryboard {
     class func centerViewController() -> CenterTabBarController {
         return UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("CenterTabBarController") as CenterTabBarController
     }
-
+    
 }
