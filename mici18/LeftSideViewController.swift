@@ -48,7 +48,10 @@ class LeftSideViewController: UIViewController, UITableViewDelegate,UITableViewD
         
         
         var nib: UINib = UINib(nibName: "LeftSideCell", bundle: NSBundle.mainBundle())
+        
+        
         self.tableView.registerNib(nib, forCellReuseIdentifier: "LeftCell")
+        
         
         
     }
@@ -84,10 +87,22 @@ class LeftSideViewController: UIViewController, UITableViewDelegate,UITableViewD
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+
         var leftCell: LeftSideCell = tableView.dequeueReusableCellWithIdentifier("LeftCell", forIndexPath: indexPath) as LeftSideCell
         
             leftCell.leftImageView.image = UIImage(named: "image1")
             leftCell.leftLabel.text = dataItems[indexPath.section][indexPath.row]
+        
+        
+//        var leftCell: LeftSideCell?
+//      
+//            var nib = UINib(nibName: "LeftSideCell", bundle: NSBundle.mainBundle())
+//            var arr = NSBundle.mainBundle().loadNibNamed("LeftSideCell", owner: self, options: nil) as [AnyObject]
+//            leftCell = arr.first as? LeftSideCell
+//        
+//        leftCell?.leftImageView.image = UIImage(named: "image1")
+//
+//        return leftCell!
         
         return leftCell
     }

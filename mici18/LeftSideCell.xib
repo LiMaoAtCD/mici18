@@ -3,84 +3,86 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="LeftCell" rowHeight="48" id="KGk-i7-Jjw" customClass="LeftSideCell" customModule="mici18" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="LeftCell" id="XeU-ZS-mU2" customClass="LeftSideCell" customModule="mici18" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XeU-ZS-mU2" id="Wrx-dt-e9q">
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VmX-vs-kw1">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="回收进程查询" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PDW-r9-J5b">
+                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u8f-oL-Ky4">
                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="22" id="aX8-ay-6ie"/>
+                            <constraint firstAttribute="height" constant="22" id="PtH-jt-f3N"/>
+                            <constraint firstAttribute="width" constant="26" id="jkd-dc-Jgy"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="aX8-ay-6ie"/>
+                                <exclude reference="PtH-jt-f3N"/>
+                                <exclude reference="jkd-dc-Jgy"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="constraints">
-                                <include reference="aX8-ay-6ie"/>
+                                <include reference="PtH-jt-f3N"/>
+                                <include reference="jkd-dc-Jgy"/>
                             </mask>
                         </variation>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="回收进程查询" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pkt-i6-M7g">
-                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
-                    <constraint firstItem="VmX-vs-kw1" firstAttribute="bottom" secondItem="Pkt-i6-M7g" secondAttribute="bottom" id="58n-Me-9Se"/>
-                    <constraint firstItem="VmX-vs-kw1" firstAttribute="top" secondItem="Pkt-i6-M7g" secondAttribute="top" id="H2i-9V-PWk"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="VmX-vs-kw1" secondAttribute="bottom" constant="1" id="VT4-Gk-4Up"/>
-                    <constraint firstItem="VmX-vs-kw1" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="1" id="VVy-LJ-pJH"/>
-                    <constraint firstItem="VmX-vs-kw1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="16" id="lu5-mj-rMn"/>
-                    <constraint firstItem="Pkt-i6-M7g" firstAttribute="leading" secondItem="VmX-vs-kw1" secondAttribute="trailing" constant="27" id="qkj-53-xK3"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="PDW-r9-J5b" secondAttribute="bottom" constant="0.5" id="MDs-IC-Zsg"/>
+                    <constraint firstItem="u8f-oL-Ky4" firstAttribute="leading" secondItem="Wrx-dt-e9q" secondAttribute="leadingMargin" constant="14" id="R5f-Dp-a7T"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="PDW-r9-J5b" secondAttribute="trailing" constant="29" id="Vti-lg-mhV"/>
+                    <constraint firstItem="PDW-r9-J5b" firstAttribute="top" secondItem="Wrx-dt-e9q" secondAttribute="topMargin" constant="6" id="pYn-Qq-f3u"/>
+                    <constraint firstItem="u8f-oL-Ky4" firstAttribute="top" secondItem="Wrx-dt-e9q" secondAttribute="topMargin" constant="5" id="tht-i2-b8c"/>
+                    <constraint firstItem="PDW-r9-J5b" firstAttribute="leading" secondItem="Wrx-dt-e9q" secondAttribute="centerXWithinMargins" multiplier="0.01" constant="50" id="wwx-0T-3Me"/>
                 </constraints>
                 <variation key="default">
                     <mask key="subviews">
-                        <exclude reference="VmX-vs-kw1"/>
-                        <exclude reference="Pkt-i6-M7g"/>
+                        <exclude reference="PDW-r9-J5b"/>
+                        <exclude reference="u8f-oL-Ky4"/>
                     </mask>
                     <mask key="constraints">
-                        <exclude reference="58n-Me-9Se"/>
-                        <exclude reference="H2i-9V-PWk"/>
-                        <exclude reference="VT4-Gk-4Up"/>
-                        <exclude reference="VVy-LJ-pJH"/>
-                        <exclude reference="lu5-mj-rMn"/>
-                        <exclude reference="qkj-53-xK3"/>
+                        <exclude reference="R5f-Dp-a7T"/>
+                        <exclude reference="tht-i2-b8c"/>
+                        <exclude reference="MDs-IC-Zsg"/>
+                        <exclude reference="Vti-lg-mhV"/>
+                        <exclude reference="pYn-Qq-f3u"/>
+                        <exclude reference="wwx-0T-3Me"/>
                     </mask>
                 </variation>
                 <variation key="heightClass=regular-widthClass=compact">
                     <mask key="subviews">
-                        <include reference="VmX-vs-kw1"/>
-                        <include reference="Pkt-i6-M7g"/>
+                        <include reference="PDW-r9-J5b"/>
+                        <include reference="u8f-oL-Ky4"/>
                     </mask>
                     <mask key="constraints">
-                        <include reference="58n-Me-9Se"/>
-                        <include reference="H2i-9V-PWk"/>
-                        <include reference="VT4-Gk-4Up"/>
-                        <include reference="VVy-LJ-pJH"/>
-                        <include reference="lu5-mj-rMn"/>
-                        <include reference="qkj-53-xK3"/>
+                        <include reference="R5f-Dp-a7T"/>
+                        <include reference="tht-i2-b8c"/>
+                        <include reference="MDs-IC-Zsg"/>
+                        <include reference="Vti-lg-mhV"/>
+                        <include reference="pYn-Qq-f3u"/>
+                        <include reference="wwx-0T-3Me"/>
                     </mask>
                 </variation>
             </tableViewCellContentView>
             <connections>
-                <outlet property="imageView" destination="VmX-vs-kw1" id="yZh-w0-dCS"/>
-                <outlet property="leftImageView" destination="VmX-vs-kw1" id="HlG-TF-ati"/>
-                <outlet property="leftLabel" destination="Pkt-i6-M7g" id="nvv-Ps-SSt"/>
+                <outlet property="leftImageView" destination="u8f-oL-Ky4" id="dYl-Ol-owD"/>
+                <outlet property="leftLabel" destination="PDW-r9-J5b" id="1ob-RF-c6z"/>
             </connections>
-            <point key="canvasLocation" x="377.5" y="335"/>
+            <point key="canvasLocation" x="320" y="713"/>
         </tableViewCell>
     </objects>
 </document>

@@ -40,19 +40,21 @@ class FirstViewController: UIViewController {
     
     
     func ALNavatar(){
-        
+        self.navigationController?.tabBarController?.selectedIndex = 0
         var avatarVC = sb.instantiateViewControllerWithIdentifier("AvatarViewController") as AvatarViewController
         avatarVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(avatarVC, animated: false)
         
     }
     func ALNguarantee(){
+        self.navigationController?.tabBarController?.selectedIndex = 0
         var guaranteeVC = sb.instantiateViewControllerWithIdentifier("GuaranteeViewController") as GuaranteeViewController
         
         self.navigationController?.pushViewController(guaranteeVC, animated: false)
         
     }
     func ALNrecycleSchedule(){
+        self.navigationController?.tabBarController?.selectedIndex = 0
         var recycleVC = sb.instantiateViewControllerWithIdentifier("RecycleScheduleViewController") as RecycleScheduleViewController
         
         self.navigationController?.pushViewController(recycleVC, animated: false)
@@ -60,25 +62,28 @@ class FirstViewController: UIViewController {
     }
 
     func ALNcoupon(){
+        self.navigationController?.tabBarController?.selectedIndex = 0
         var couponVC = sb.instantiateViewControllerWithIdentifier("CouponViewController") as CouponViewController
         
         self.navigationController?.pushViewController(couponVC, animated: false)
     }
 
     func ALNenshrine(){
+        self.navigationController?.tabBarController?.selectedIndex = 0
         var enshrineVC = sb.instantiateViewControllerWithIdentifier("EnshrineViewController") as EnshrineViewController
         
         self.navigationController?.pushViewController(enshrineVC, animated: false)
         
     }
     func ALNcontribute(){
-        
+        self.navigationController?.tabBarController?.selectedIndex = 0
         var ContributeVC = sb.instantiateViewControllerWithIdentifier("ContributeViewController") as ContributeViewController
         
         self.navigationController?.pushViewController(ContributeVC, animated: false)
         
     }
     func ALNsetting(){
+        self.navigationController?.tabBarController?.selectedIndex = 0
         var settingVC = sb.instantiateViewControllerWithIdentifier("SettingViewController") as SettingViewController
         
         self.navigationController?.pushViewController(settingVC, animated: false)
