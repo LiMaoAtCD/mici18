@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -55,12 +56,12 @@
                         <exclude reference="u8f-oL-Ky4"/>
                     </mask>
                     <mask key="constraints">
-                        <exclude reference="R5f-Dp-a7T"/>
-                        <exclude reference="tht-i2-b8c"/>
                         <exclude reference="MDs-IC-Zsg"/>
                         <exclude reference="Vti-lg-mhV"/>
                         <exclude reference="pYn-Qq-f3u"/>
                         <exclude reference="wwx-0T-3Me"/>
+                        <exclude reference="R5f-Dp-a7T"/>
+                        <exclude reference="tht-i2-b8c"/>
                     </mask>
                 </variation>
                 <variation key="heightClass=regular-widthClass=compact">
@@ -69,12 +70,12 @@
                         <include reference="u8f-oL-Ky4"/>
                     </mask>
                     <mask key="constraints">
-                        <include reference="R5f-Dp-a7T"/>
-                        <include reference="tht-i2-b8c"/>
                         <include reference="MDs-IC-Zsg"/>
                         <include reference="Vti-lg-mhV"/>
                         <include reference="pYn-Qq-f3u"/>
                         <include reference="wwx-0T-3Me"/>
+                        <include reference="R5f-Dp-a7T"/>
+                        <include reference="tht-i2-b8c"/>
                     </mask>
                 </variation>
             </tableViewCellContentView>

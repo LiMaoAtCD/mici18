@@ -7,25 +7,23 @@
 //
 
 import UIKit
+import Foundation
 
 
-
-class FirstViewController: UIViewController {
+class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     let sb: UIStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+    
+    
+    
+    var mainPageItems: [String]?
 
+    @IBOutlet weak var mainPageList: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-        //           case avatar
-//        case guarantee
-//        case recycleSchedule
-//        case coupon
-//        case enshrine
-//        case contribute
-//        case setting
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "ALNavatar", name: "ALNavatar", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "ALNguarantee", name: "ALNguarantee", object: nil)
@@ -35,57 +33,160 @@ class FirstViewController: UIViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "ALNcontribute", name: "ALNcontribute", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "ALNsetting", name: "ALNsetting", object: nil)
         
+        
+        
+        
+        var userDefault: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        
+        var account = userDefault.objectForKey("ALNAccount") as String?
+        
+        if let acc = account {
+            
+        } else {
+            
+        }
+        
+        
+        
+        
+        
+        
+        
+        //定制左按钮
+        let leftImage = UIImage(named: "button")
+        let leftImageWidth = leftImage?.size.width
+        let leftImageHeight = leftImage?.size.height
+        let leftButton: UIButton = UIButton(frame: CGRect(x: 0,y: 0,width: leftImageWidth!, height: leftImageHeight!))
+        leftButton.layer.cornerRadius = leftImageWidth! < leftImageHeight! ? leftImageWidth! / 2 : leftImageHeight! / 2
+        leftButton.layer.masksToBounds = true
+        
+        leftButton.setBackgroundImage(leftImage, forState: .Normal)
+        leftButton.addTarget(self, action: Selector("showLeftPanel:"), forControlEvents: UIControlEvents.TouchUpInside)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftButton)
+        
+        //定制右按钮
+        let infoImage = UIImage(named: "button")
+        let imgWidth = infoImage?.size.width
+        let imgHeight = infoImage?.size.height
+        let button:UIButton = UIButton(frame: CGRect(x: 0,y: 0,width: imgWidth!, height: imgHeight!))
+        button.setBackgroundImage(infoImage, forState: .Normal)
+        button.addTarget(self, action: Selector("showRightPanel:"), forControlEvents: UIControlEvents.TouchUpInside)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
+        
+        //navigationBar 样式
+        self.navigationController?.navigationBar.setBackgroundImage(nil, forBarMetrics: UIBarMetrics.Default)
+        self.navigationController?.navigationBar.shadowImage = nil
+        self.navigationController?.navigationBar.translucent = false
+        
+        
+        self.title = "首页"
     }
     
     
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+//        return mainPageItems!.count
+        return 2
+
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    
+        if indexPath.row == 0 {
+            
+           var cell: MainPageFirstItemCell? = tableView.dequeueReusableCellWithIdentifier("MainPageFirstItemCell") as? MainPageFirstItemCell
+            
+            if let c = cell {
+            } else {
+                var arr = NSBundle.mainBundle().loadNibNamed("MainPageFirstItemCell", owner: self, options: nil)
+                
+                cell = arr.first as? MainPageFirstItemCell
+            }
+            cell?.firstItemImageView.image = UIImage(named: "image1")
+            
+            return cell!
+
+        } else {
+            var cell: MainPageSecondItemsCell? = tableView.dequeueReusableCellWithIdentifier("MainPageSecondItemsCell") as? MainPageSecondItemsCell
+            
+            if let c = cell {
+            } else {
+                var arr = NSBundle.mainBundle().loadNibNamed("MainPageSecondItemsCell", owner: self, options: nil)
+                
+                cell = arr.first as? MainPageSecondItemsCell
+            }
+            
+            return cell!
+        }
+        
+        
+        
+    }
+    
+    func commonSettings(vc:UIViewController) {
+        self.navigationController?.popToRootViewControllerAnimated(false)
+        self.navigationController?.tabBarController?.selectedIndex = 0
+        
+        vc.hidesBottomBarWhenPushed = true
+        
+        self.navigationController?.navigationBar.setBackgroundImage(nil, forBarMetrics: UIBarMetrics.Default)
+        self.navigationController?.navigationBar.shadowImage = nil
+        self.navigationController?.navigationBar.translucent = false
+        
+       
+    }
     
     func ALNavatar(){
-        self.navigationController?.tabBarController?.selectedIndex = 0
         var avatarVC = sb.instantiateViewControllerWithIdentifier("AvatarViewController") as AvatarViewController
-        avatarVC.hidesBottomBarWhenPushed = true
+        commonSettings(avatarVC)
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.translucent = true
+        
         self.navigationController?.pushViewController(avatarVC, animated: false)
         
     }
     func ALNguarantee(){
-        self.navigationController?.tabBarController?.selectedIndex = 0
+      
         var guaranteeVC = sb.instantiateViewControllerWithIdentifier("GuaranteeViewController") as GuaranteeViewController
-        
+        commonSettings(guaranteeVC)
+
         self.navigationController?.pushViewController(guaranteeVC, animated: false)
         
     }
     func ALNrecycleSchedule(){
-        self.navigationController?.tabBarController?.selectedIndex = 0
-        var recycleVC = sb.instantiateViewControllerWithIdentifier("RecycleScheduleViewController") as RecycleScheduleViewController
         
+        var recycleVC = sb.instantiateViewControllerWithIdentifier("RecycleScheduleViewController") as RecycleScheduleViewController
+        commonSettings(recycleVC)
         self.navigationController?.pushViewController(recycleVC, animated: false)
         
     }
 
     func ALNcoupon(){
-        self.navigationController?.tabBarController?.selectedIndex = 0
         var couponVC = sb.instantiateViewControllerWithIdentifier("CouponViewController") as CouponViewController
-        
+        commonSettings(couponVC)
         self.navigationController?.pushViewController(couponVC, animated: false)
     }
 
     func ALNenshrine(){
-        self.navigationController?.tabBarController?.selectedIndex = 0
         var enshrineVC = sb.instantiateViewControllerWithIdentifier("EnshrineViewController") as EnshrineViewController
-        
+        commonSettings(enshrineVC)
         self.navigationController?.pushViewController(enshrineVC, animated: false)
         
     }
     func ALNcontribute(){
-        self.navigationController?.tabBarController?.selectedIndex = 0
         var ContributeVC = sb.instantiateViewControllerWithIdentifier("ContributeViewController") as ContributeViewController
-        
+        commonSettings(ContributeVC)
         self.navigationController?.pushViewController(ContributeVC, animated: false)
         
     }
     func ALNsetting(){
-        self.navigationController?.tabBarController?.selectedIndex = 0
         var settingVC = sb.instantiateViewControllerWithIdentifier("SettingViewController") as SettingViewController
-        
+        commonSettings(settingVC)
         self.navigationController?.pushViewController(settingVC, animated: false)
         
     }
@@ -94,11 +195,11 @@ class FirstViewController: UIViewController {
     
     
     
-    @IBAction func showLeftPanel(sender: AnyObject) {
+    func showLeftPanel(sender: AnyObject) {
         NSNotificationCenter.defaultCenter().postNotificationName("toggleLeftPanel", object: nil)
     }
 
-    @IBAction func showRightPanel(sender: AnyObject) {
+    func showRightPanel(sender: AnyObject) {
         NSNotificationCenter.defaultCenter().postNotificationName("toggleRightPanel", object: nil)
     }
     override func didReceiveMemoryWarning() {

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MainPageFirstItemCell" rowHeight="161" id="KGk-i7-Jjw" customClass="MainPageFirstItemCell" customModule="mici18" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image1" translatesAutoresizingMaskIntoConstraints="NO" id="QVd-sO-9AO">
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="145" id="fTZ-PX-Xeq"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="fTZ-PX-Xeq"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="fTZ-PX-Xeq"/>
+                            </mask>
+                        </variation>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="aaa" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJv-n0-5mi">
+                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="oJv-n0-5mi" firstAttribute="leading" secondItem="QVd-sO-9AO" secondAttribute="trailing" constant="47" id="3PR-Is-2VR"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="QVd-sO-9AO" secondAttribute="bottom" constant="13.5" id="JKX-X0-dNJ"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="oJv-n0-5mi" secondAttribute="bottom" constant="99.5" id="NwZ-zk-Moi"/>
+                    <constraint firstItem="QVd-sO-9AO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="12" id="POj-a1-VTa"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="oJv-n0-5mi" secondAttribute="trailing" constant="63" id="Pjq-TV-Yif"/>
+                    <constraint firstItem="QVd-sO-9AO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="17" id="a17-pJ-Edb"/>
+                    <constraint firstItem="oJv-n0-5mi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="24" id="kHB-dm-bXl"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="subviews">
+                        <exclude reference="QVd-sO-9AO"/>
+                        <exclude reference="oJv-n0-5mi"/>
+                    </mask>
+                    <mask key="constraints">
+                        <exclude reference="JKX-X0-dNJ"/>
+                        <exclude reference="POj-a1-VTa"/>
+                        <exclude reference="a17-pJ-Edb"/>
+                        <exclude reference="3PR-Is-2VR"/>
+                        <exclude reference="NwZ-zk-Moi"/>
+                        <exclude reference="Pjq-TV-Yif"/>
+                        <exclude reference="kHB-dm-bXl"/>
+                    </mask>
+                </variation>
+                <variation key="heightClass=regular-widthClass=compact">
+                    <mask key="subviews">
+                        <include reference="QVd-sO-9AO"/>
+                        <include reference="oJv-n0-5mi"/>
+                    </mask>
+                    <mask key="constraints">
+                        <include reference="JKX-X0-dNJ"/>
+                        <include reference="POj-a1-VTa"/>
+                        <include reference="a17-pJ-Edb"/>
+                        <include reference="3PR-Is-2VR"/>
+                        <include reference="NwZ-zk-Moi"/>
+                        <include reference="Pjq-TV-Yif"/>
+                        <include reference="kHB-dm-bXl"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="firstItemImageView" destination="QVd-sO-9AO" id="EWj-SO-yQY"/>
+            </connections>
+            <point key="canvasLocation" x="258" y="216.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="image1" width="188" height="194"/>
+    </resources>
+</document>

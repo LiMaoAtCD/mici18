@@ -135,6 +135,7 @@ class ContainerViewController: UIViewController, LeftViewControllerDelegate {
                     self.leftViewController = nil
                     self.rightViewController?.view.removeFromSuperview()
                     self.rightViewController = nil
+                    
                     if let tap = self.tapForSlide {
                         self.centerVC.view.removeGestureRecognizer(tap)
                     }
@@ -147,9 +148,6 @@ class ContainerViewController: UIViewController, LeftViewControllerDelegate {
         
         var panForSlide: UIPanGestureRecognizer  = UIPanGestureRecognizer(target: self, action: "handlePanGesture:")
         self.centerVC.view.addGestureRecognizer(panForSlide)
-        
-        
-        
     }
     
     func handleTapGesture(recognizer: UITapGestureRecognizer) {
