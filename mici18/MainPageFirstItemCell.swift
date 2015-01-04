@@ -14,6 +14,10 @@ class MainPageFirstItemCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        firstItemImageView.setNeedsLayout()
+        println( firstItemImageView.bounds.height)
+        firstItemImageView.layer.cornerRadius = firstItemImageView.bounds.height > firstItemImageView.bounds.width ? (firstItemImageView.bounds.width / 2 - 1)  : (firstItemImageView.bounds.height / 2 - 1)
+        firstItemImageView.layer.masksToBounds = true
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MainPageForTwoCell" rowHeight="117" id="KGk-i7-Jjw" customClass="MainPageForTwoCell" customModule="mici18" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image1" translatesAutoresizingMaskIntoConstraints="NO" id="Azb-7D-dSO">
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test" translatesAutoresizingMaskIntoConstraints="NO" id="nOS-wr-PCb">
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="趣味乐园" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZNl-P8-6Wr">
+                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="140" id="acC-K4-pkh"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="acC-K4-pkh"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="acC-K4-pkh"/>
+                            </mask>
+                        </variation>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="nOS-wr-PCb" secondAttribute="trailing" constant="10" id="17W-MJ-SkP"/>
+                    <constraint firstItem="nOS-wr-PCb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="45" id="5Vw-jc-j4G"/>
+                    <constraint firstItem="nOS-wr-PCb" firstAttribute="leading" secondItem="Azb-7D-dSO" secondAttribute="trailing" constant="10" id="ASl-Xy-Ciu"/>
+                    <constraint firstItem="ZNl-P8-6Wr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="HMF-eM-yK8"/>
+                    <constraint firstItem="nOS-wr-PCb" firstAttribute="top" secondItem="Azb-7D-dSO" secondAttribute="top" id="N6p-ma-qzX">
+                        <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                    </constraint>
+                    <constraint firstItem="Azb-7D-dSO" firstAttribute="height" secondItem="nOS-wr-PCb" secondAttribute="height" id="aIk-2I-VXR"/>
+                    <constraint firstItem="ZNl-P8-6Wr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="gsd-zY-yrX"/>
+                    <constraint firstItem="Azb-7D-dSO" firstAttribute="width" secondItem="nOS-wr-PCb" secondAttribute="width" id="o0g-kg-vtm"/>
+                    <constraint firstItem="Azb-7D-dSO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="pMI-mr-Axc"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Azb-7D-dSO" secondAttribute="bottom" constant="7" id="ysW-cM-CH6"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="subviews">
+                        <exclude reference="Azb-7D-dSO"/>
+                        <exclude reference="nOS-wr-PCb"/>
+                        <exclude reference="ZNl-P8-6Wr"/>
+                    </mask>
+                    <mask key="constraints">
+                        <exclude reference="HMF-eM-yK8"/>
+                        <exclude reference="gsd-zY-yrX"/>
+                        <exclude reference="aIk-2I-VXR"/>
+                        <exclude reference="o0g-kg-vtm"/>
+                        <exclude reference="pMI-mr-Axc"/>
+                        <exclude reference="ysW-cM-CH6"/>
+                        <exclude reference="17W-MJ-SkP"/>
+                        <exclude reference="5Vw-jc-j4G"/>
+                        <exclude reference="ASl-Xy-Ciu"/>
+                        <exclude reference="N6p-ma-qzX"/>
+                    </mask>
+                </variation>
+                <variation key="heightClass=regular-widthClass=compact">
+                    <mask key="subviews">
+                        <include reference="Azb-7D-dSO"/>
+                        <include reference="nOS-wr-PCb"/>
+                        <include reference="ZNl-P8-6Wr"/>
+                    </mask>
+                    <mask key="constraints">
+                        <include reference="HMF-eM-yK8"/>
+                        <include reference="gsd-zY-yrX"/>
+                        <include reference="aIk-2I-VXR"/>
+                        <include reference="o0g-kg-vtm"/>
+                        <include reference="pMI-mr-Axc"/>
+                        <include reference="ysW-cM-CH6"/>
+                        <include reference="17W-MJ-SkP"/>
+                        <include reference="5Vw-jc-j4G"/>
+                        <include reference="ASl-Xy-Ciu"/>
+                        <include reference="N6p-ma-qzX"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <point key="canvasLocation" x="675" y="428.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="image1" width="188" height="194"/>
+        <image name="test" width="148" height="150"/>
+    </resources>
+</document>

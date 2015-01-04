@@ -125,6 +125,10 @@ class ContainerViewController: UIViewController, LeftViewControllerDelegate {
     func animateCenterViewControllerToCenter() {
         
         UIView.animateWithDuration(animationSpeed, animations: { () -> Void in
+            
+            if let tap = self.tapForSlide {
+                self.centerVC.view.removeGestureRecognizer(tap)
+            }
             self.centerVC.view.transform = CGAffineTransformScale(CGAffineTransformIdentity,1.0,1.0)
             self.centerVC.view.center = CGPointMake(UIScreen.mainScreen().bounds.size.width / 2, UIScreen.mainScreen().bounds.size.height / 2)
             }) { (finished) -> Void in
@@ -136,9 +140,7 @@ class ContainerViewController: UIViewController, LeftViewControllerDelegate {
                     self.rightViewController?.view.removeFromSuperview()
                     self.rightViewController = nil
                     
-                    if let tap = self.tapForSlide {
-                        self.centerVC.view.removeGestureRecognizer(tap)
-                    }
+                    
                 }
         }
     }

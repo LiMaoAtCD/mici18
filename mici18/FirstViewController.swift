@@ -14,11 +14,10 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     let sb: UIStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
     
-    
-    
-    var mainPageItems: [String]?
+    var mainPageItems: [AnyObject]?
 
     @IBOutlet weak var mainPageList: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -80,6 +79,10 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         
         self.title = "首页"
+        
+        mainPageItems = [4, 6, 2]
+        
+        self.mainPageList.tableFooterView = UIView()
     }
     
     
@@ -89,9 +92,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-//        return mainPageItems!.count
-        return 2
-
+        return mainPageItems!.count + 1
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -100,32 +101,104 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
             
            var cell: MainPageFirstItemCell? = tableView.dequeueReusableCellWithIdentifier("MainPageFirstItemCell") as? MainPageFirstItemCell
             
+            
             if let c = cell {
             } else {
                 var arr = NSBundle.mainBundle().loadNibNamed("MainPageFirstItemCell", owner: self, options: nil)
                 
                 cell = arr.first as? MainPageFirstItemCell
             }
-            cell?.firstItemImageView.image = UIImage(named: "image1")
+            cell?.firstItemImageView.image = UIImage(named: "test")
             
             return cell!
 
         } else {
-            var cell: MainPageSecondItemsCell? = tableView.dequeueReusableCellWithIdentifier("MainPageSecondItemsCell") as? MainPageSecondItemsCell
-            
-            if let c = cell {
-            } else {
-                var arr = NSBundle.mainBundle().loadNibNamed("MainPageSecondItemsCell", owner: self, options: nil)
-                
-                cell = arr.first as? MainPageSecondItemsCell
-            }
-            
-            return cell!
+            return self.configureCell(indexPath, tableView: tableView)
         }
         
         
         
     }
+    
+    func configureCell(indexPath: NSIndexPath , tableView:UITableView) -> UITableViewCell {
+        
+            if mainPageItems?[indexPath.row - 1] as Int == 2 {
+                
+                var cell: MainPageForTwoCell? = tableView.dequeueReusableCellWithIdentifier("MainPageForTwoCell") as? MainPageForTwoCell
+                
+                if let c = cell {
+                } else {
+                    
+                    var arr = NSBundle.mainBundle().loadNibNamed("MainPageForTwoCell", owner: self, options: nil)
+                    cell = arr.first as? MainPageForTwoCell
+                }
+            
+                return cell!
+                
+            } else if mainPageItems?[indexPath.row - 1] as Int == 4  {
+                
+                var cell: MainPageForFourCell? = tableView.dequeueReusableCellWithIdentifier("MainPageForFourCell") as? MainPageForFourCell
+                
+                if let c = cell {
+                } else {
+                    var arr = NSBundle.mainBundle().loadNibNamed("MainPageForFourCell", owner: self, options: nil)
+                    cell = arr.first as? MainPageForFourCell
+                }
+                
+                return cell!
+                
+            } else {
+                
+                var cell: MainPageForSixTableViewCell? = tableView.dequeueReusableCellWithIdentifier("MainPageForSixTableViewCell") as? MainPageForSixTableViewCell
+                
+                if let c = cell {
+                } else {
+                    var arr = NSBundle.mainBundle().loadNibNamed("MainPageForSixTableViewCell", owner: self, options: nil)
+                    cell = arr.first as? MainPageForSixTableViewCell
+                }
+                
+                return cell!
+            }
+            
+        
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+//        if indexPath.row == 0 {
+//            
+//            var cell: MainPageFirstItemCell? = tableView.dequeueReusableCellWithIdentifier("MainPageFirstItemCell") as? MainPageFirstItemCell
+//            if let c = cell {
+//            } else {
+//                var arr = NSBundle.mainBundle().loadNibNamed("MainPageFirstItemCell", owner: self, options: nil)
+//                
+//                cell = arr.first as? MainPageFirstItemCell
+//            }
+//            
+//            var size: CGSize = cell!.contentView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize)
+//            println(size)
+//            return 1 + size.height
+//        } else {
+//           var cell =  self.configureCell(indexPath, tableView: tableView)
+//            
+//            var size: CGSize = cell.contentView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize)
+//            
+//            return size.height + 1
+//        }
+        if indexPath.row == 0 {
+            return 199.0
+        } else {
+            if mainPageItems?[indexPath.row - 1] as Int == 2 {
+                return 117
+            } else if mainPageItems?[indexPath.row - 1] as Int == 4 {
+                return 167
+            } else {
+                return 285
+            }
+        }
+    }
+    
+    
+    // MARK: Container Methods
     
     func commonSettings(vc:UIViewController) {
         self.navigationController?.popToRootViewControllerAnimated(false)

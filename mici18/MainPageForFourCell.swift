@@ -1,14 +1,14 @@
 //
-//  MainPageSecondItemsCell.swift
+//  MainPageForFourCell.swift
 //  mici18
 //
-//  Created by AlienLi on 14/12/31.
-//  Copyright (c) 2014年 ALN. All rights reserved.
+//  Created by AlienLi on 15/1/4.
+//  Copyright (c) 2015年 ALN. All rights reserved.
 //
 
 import UIKit
 
-class MainPageSecondItemsCell: UITableViewCell {
+class MainPageForFourCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
