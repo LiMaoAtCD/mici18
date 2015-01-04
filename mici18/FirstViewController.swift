@@ -72,10 +72,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         button.addTarget(self, action: Selector("showRightPanel:"), forControlEvents: UIControlEvents.TouchUpInside)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
         
-        //navigationBar 样式
-        self.navigationController?.navigationBar.setBackgroundImage(nil, forBarMetrics: UIBarMetrics.Default)
-        self.navigationController?.navigationBar.shadowImage = nil
-        self.navigationController?.navigationBar.translucent = false
+       
         
         
         self.title = "首页"
@@ -83,6 +80,16 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         mainPageItems = [4, 6, 2]
         
         self.mainPageList.tableFooterView = UIView()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        //navigationBar 样式
+        self.navigationController?.navigationBar.setBackgroundImage(nil, forBarMetrics: UIBarMetrics.Default)
+        self.navigationController?.navigationBar.shadowImage = nil
+        self.navigationController?.navigationBar.translucent = false
+        
     }
     
     
