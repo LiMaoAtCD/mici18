@@ -72,12 +72,31 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         button.addTarget(self, action: Selector("showRightPanel:"), forControlEvents: UIControlEvents.TouchUpInside)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: button)
         
-       
-        
-        
+
         self.title = "首页"
         
-        mainPageItems = [4, 6, 2]
+        mainPageItems = [
+            [
+                ["http://www.image.com","http://www.click.com"],
+                ["http://www.image.com","http://www.click.com"]
+            ],
+            [
+                ["http://www.image.com","http://www.click.com"],
+                ["http://www.image.com","http://www.click.com"],
+                ["http://www.image.com","http://www.click.com"],
+                ["http://www.image.com","http://www.click.com"]
+            ],
+            [
+                ["http://www.image.com","http://www.click.com"],
+                ["http://www.image.com","http://www.click.com"],
+                ["http://www.image.com","http://www.click.com"],
+                ["http://www.image.com","http://www.click.com"],
+                ["http://www.image.com","http://www.click.com"],
+                ["http://www.image.com","http://www.click.com"]
+
+            ]
+            
+        ]
         
         self.mainPageList.tableFooterView = UIView()
     }
@@ -92,6 +111,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
     }
     
+    //MARK: tableView dataSource & delegate
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -124,12 +144,13 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         
         
-        
     }
     
     func configureCell(indexPath: NSIndexPath , tableView:UITableView) -> UITableViewCell {
         
-            if mainPageItems?[indexPath.row - 1] as Int == 2 {
+        var arr = mainPageItems?[indexPath.row - 1] as [AnyObject]
+        
+            if arr.count as Int == 2 {
                 
                 var cell: MainPageForTwoCell? = tableView.dequeueReusableCellWithIdentifier("MainPageForTwoCell") as? MainPageForTwoCell
                 
@@ -138,11 +159,14 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     
                     var arr = NSBundle.mainBundle().loadNibNamed("MainPageForTwoCell", owner: self, options: nil)
                     cell = arr.first as? MainPageForTwoCell
+                    
+                    cell?.imageView1.tag = indexPath.row * 1 + 0
+                    cell?.imageView2.tag = indexPath.row * 1 + 1
                 }
             
                 return cell!
                 
-            } else if mainPageItems?[indexPath.row - 1] as Int == 4  {
+            } else if arr.count as Int == 4  {
                 
                 var cell: MainPageForFourCell? = tableView.dequeueReusableCellWithIdentifier("MainPageForFourCell") as? MainPageForFourCell
                 
@@ -150,6 +174,11 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 } else {
                     var arr = NSBundle.mainBundle().loadNibNamed("MainPageForFourCell", owner: self, options: nil)
                     cell = arr.first as? MainPageForFourCell
+                    cell?.imageView1.tag = indexPath.row * 10 + 0
+                    cell?.imageView2.tag = indexPath.row * 10 + 1
+                    cell?.imageView3.tag = indexPath.row * 10 + 2
+                    cell?.imageView4.tag = indexPath.row * 10 + 3
+                    
                 }
                 
                 return cell!
@@ -162,6 +191,14 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 } else {
                     var arr = NSBundle.mainBundle().loadNibNamed("MainPageForSixTableViewCell", owner: self, options: nil)
                     cell = arr.first as? MainPageForSixTableViewCell
+                    
+                    cell?.imageView1.tag = indexPath.row * 20 + 0
+                    cell?.imageView2.tag = indexPath.row * 20 + 1
+                    cell?.imageView3.tag = indexPath.row * 20 + 2
+                    cell?.imageView4.tag = indexPath.row * 20 + 3
+                    cell?.imageView5.tag = indexPath.row * 20 + 4
+                    cell?.imageView6.tag = indexPath.row * 20 + 5
+              
                 }
                 
                 return cell!
@@ -185,18 +222,23 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
 //            println(size)
 //            return 1 + size.height
 //        } else {
+//            
 //           var cell =  self.configureCell(indexPath, tableView: tableView)
 //            
 //            var size: CGSize = cell.contentView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize)
 //            
 //            return size.height + 1
 //        }
+        
         if indexPath.row == 0 {
             return 199.0
         } else {
-            if mainPageItems?[indexPath.row - 1] as Int == 2 {
+            
+            var arr = mainPageItems?[indexPath.row - 1] as [AnyObject]
+            
+            if arr.count as Int == 2 {
                 return 117
-            } else if mainPageItems?[indexPath.row - 1] as Int == 4 {
+            } else if arr.count as Int == 4 {
                 return 167
             } else {
                 return 285

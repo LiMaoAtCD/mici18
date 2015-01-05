@@ -10,6 +10,15 @@ import UIKit
 
 class MainPageForSixTableViewCell: UITableViewCell {
 
+    
+    @IBOutlet weak var imageView1: UIImageView!
+    @IBOutlet weak var imageView2: UIImageView!
+    @IBOutlet weak var imageView3: UIImageView!
+    
+    @IBOutlet weak var imageView4: UIImageView!
+    @IBOutlet weak var imageView5: UIImageView!
+    @IBOutlet weak var imageView6: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,6 +28,8 @@ class MainPageForSixTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+        self.selectionStyle = UITableViewCellSelectionStyle.None
+
     }
     
 }

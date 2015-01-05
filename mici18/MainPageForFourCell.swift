@@ -10,6 +10,10 @@ import UIKit
 
 class MainPageForFourCell: UITableViewCell {
 
+    @IBOutlet weak var imageView1: UIImageView!
+    @IBOutlet weak var imageView2: UIImageView!
+    @IBOutlet weak var imageView3: UIImageView!
+    @IBOutlet weak var imageView4: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,6 +23,8 @@ class MainPageForFourCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+        self.selectionStyle = UITableViewCellSelectionStyle.None
+
     }
     
 }
