@@ -20,29 +20,16 @@ class RightWebViewController: UIViewController, UIWebViewDelegate {
         // Do any additional setup after loading the view.
         
        
-        
-        var url: NSURL?
+        let urlArray:[String] = [
+            "http://192.168.2.253/demo/miw03/web/weblist.html?list=qualityGuarantee",
+            "http://192.168.2.253/demo/miw03/web/weblist.html?list=phoneCase",
+            "http://192.168.2.253/demo/miw03/web/weblist.html?list=pointMall",
+            "http://192.168.2.253/demo/miw03/web/weblist.html?list=lifeService",
+            "http://192.168.2.253/demo/miw03/web/weblist.html?list=niceApp",
+            "http://192.168.2.253/demo/miw03/web/weblist.html?list=trickSet"
+        ]
         if let index = type {
-            switch index {
-            case 1:
-                url = NSURL(string : "http://www.baidu.com")
-
-            case 2:
-                url = NSURL(string: "http://www.baidu.com")
-
-            case 3:
-                url = NSURL(string: "http://www.baidu.com")
-            case 4:
-                url = NSURL(string: "http://www.baidu.com")
-            case 5:
-                url = NSURL(string: "http://www.baidu.com")
-            case 6:
-                url = NSURL(string: "http://www.baidu.com")
-            default:
-                
-                url = nil
-            }
-            
+            var url = NSURL(string: urlArray[index - 1])
             var request: NSURLRequest = NSURLRequest(URL: url!)
             webView.loadRequest(request)
             

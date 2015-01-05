@@ -30,9 +30,14 @@
 		87835CB01A5A375C00EEA262 /* RightWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87835CAE1A5A375C00EEA262 /* RightWebViewController.swift */; };
 		87835CB21A5A660500EEA262 /* LeftSideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87835CB11A5A660500EEA262 /* LeftSideViewController.swift */; };
 		87835CB31A5A660500EEA262 /* LeftSideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87835CB11A5A660500EEA262 /* LeftSideViewController.swift */; };
+		87835CB51A5A781E00EEA262 /* SecondTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87835CB41A5A781E00EEA262 /* SecondTableTableViewController.swift */; };
+		87835CB61A5A781E00EEA262 /* SecondTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87835CB41A5A781E00EEA262 /* SecondTableTableViewController.swift */; };
+		87835CB81A5A806400EEA262 /* testTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87835CB71A5A806400EEA262 /* testTableViewCell.swift */; };
+		87835CB91A5A806400EEA262 /* testTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87835CB71A5A806400EEA262 /* testTableViewCell.swift */; };
+		87835CBC1A5A9BFC00EEA262 /* InsuranceIconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87835CBB1A5A9BFC00EEA262 /* InsuranceIconTableViewCell.swift */; };
+		87835CBD1A5A9BFC00EEA262 /* InsuranceIconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87835CBB1A5A9BFC00EEA262 /* InsuranceIconTableViewCell.swift */; };
 		8785A55C1A4B0EF300A9C1E3 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8785A55B1A4B0EF300A9C1E3 /* ContainerViewController.swift */; };
 		8785A5601A4B117600A9C1E3 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8785A55F1A4B117600A9C1E3 /* FirstViewController.swift */; };
-		8785A5621A4B118100A9C1E3 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8785A5611A4B118100A9C1E3 /* SecondViewController.swift */; };
 		879F6C0B1A4C00C700984C1E /* CenterTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879F6C0A1A4C00C700984C1E /* CenterTabBarController.swift */; };
 		87CF13821A50FF56009A9B2E /* LeftSideCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CF13801A50FF56009A9B2E /* LeftSideCell.swift */; };
 		87CF13831A50FF56009A9B2E /* LeftSideCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CF13801A50FF56009A9B2E /* LeftSideCell.swift */; };
@@ -89,9 +94,11 @@
 		87835CAA1A5A2EC300EEA262 /* RightSideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightSideViewController.swift; sourceTree = "<group>"; };
 		87835CAE1A5A375C00EEA262 /* RightWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightWebViewController.swift; sourceTree = "<group>"; };
 		87835CB11A5A660500EEA262 /* LeftSideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftSideViewController.swift; sourceTree = "<group>"; };
+		87835CB41A5A781E00EEA262 /* SecondTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondTableTableViewController.swift; sourceTree = "<group>"; };
+		87835CB71A5A806400EEA262 /* testTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testTableViewCell.swift; sourceTree = "<group>"; };
+		87835CBB1A5A9BFC00EEA262 /* InsuranceIconTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceIconTableViewCell.swift; sourceTree = "<group>"; };
 		8785A55B1A4B0EF300A9C1E3 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		8785A55F1A4B117600A9C1E3 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		8785A5611A4B118100A9C1E3 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		879F6C0A1A4C00C700984C1E /* CenterTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterTabBarController.swift; sourceTree = "<group>"; };
 		87CF13801A50FF56009A9B2E /* LeftSideCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftSideCell.swift; sourceTree = "<group>"; };
 		87CF13811A50FF56009A9B2E /* LeftSideCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeftSideCell.xib; sourceTree = "<group>"; };
@@ -191,15 +198,25 @@
 			name = RightViewController;
 			sourceTree = "<group>";
 		};
+		87835CBA1A5A851700EEA262 /* SecondItems */ = {
+			isa = PBXGroup;
+			children = (
+				87835CB41A5A781E00EEA262 /* SecondTableTableViewController.swift */,
+				87835CBB1A5A9BFC00EEA262 /* InsuranceIconTableViewCell.swift */,
+				87835CB71A5A806400EEA262 /* testTableViewCell.swift */,
+			);
+			name = SecondItems;
+			sourceTree = "<group>";
+		};
 		879F6C0C1A4C00E400984C1E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				87835CBA1A5A851700EEA262 /* SecondItems */,
 				87835CAD1A5A372D00EEA262 /* RightViewController */,
-				87CF13861A514D71009A9B2E /* DetailControllers */,
+				87CF13861A514D71009A9B2E /* LeftViewControllers */,
 				8785A55B1A4B0EF300A9C1E3 /* ContainerViewController.swift */,
 				879F6C0A1A4C00C700984C1E /* CenterTabBarController.swift */,
 				8785A55F1A4B117600A9C1E3 /* FirstViewController.swift */,
-				8785A5611A4B118100A9C1E3 /* SecondViewController.swift */,
 				87835CB11A5A660500EEA262 /* LeftSideViewController.swift */,
 			);
 			name = Controllers;
@@ -222,7 +239,7 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
-		87CF13861A514D71009A9B2E /* DetailControllers */ = {
+		87CF13861A514D71009A9B2E /* LeftViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				87CF13871A514D8E009A9B2E /* AvatarViewController.swift */,
@@ -234,7 +251,7 @@
 				87CF13961A515E9D009A9B2E /* ContributeViewController.swift */,
 				87CF13991A515EAF009A9B2E /* SettingViewController.swift */,
 			);
-			name = DetailControllers;
+			name = LeftViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,11 +367,12 @@
 				87EAA5861A53CDDB00AA8F01 /* EditProfileViewController.swift in Sources */,
 				87835CB21A5A660500EEA262 /* LeftSideViewController.swift in Sources */,
 				875E49FE1A58CCB200D8C0BD /* MainPageForFourCell.swift in Sources */,
+				87835CB51A5A781E00EEA262 /* SecondTableTableViewController.swift in Sources */,
 				8785A55C1A4B0EF300A9C1E3 /* ContainerViewController.swift in Sources */,
 				87CF138B1A515D3D009A9B2E /* GuaranteeViewController.swift in Sources */,
+				87835CBC1A5A9BFC00EEA262 /* InsuranceIconTableViewCell.swift in Sources */,
 				877AD8751A4AC2FB000260A3 /* AppDelegate.swift in Sources */,
 				87CF13971A515E9D009A9B2E /* ContributeViewController.swift in Sources */,
-				8785A5621A4B118100A9C1E3 /* SecondViewController.swift in Sources */,
 				875E4A041A58CCD900D8C0BD /* MainPageForSixTableViewCell.swift in Sources */,
 				87CF139A1A515EAF009A9B2E /* SettingViewController.swift in Sources */,
 				8785A5601A4B117600A9C1E3 /* FirstViewController.swift in Sources */,
@@ -364,6 +382,7 @@
 				87835CAF1A5A375C00EEA262 /* RightWebViewController.swift in Sources */,
 				87CF13821A50FF56009A9B2E /* LeftSideCell.swift in Sources */,
 				87835CAB1A5A2EC300EEA262 /* RightSideViewController.swift in Sources */,
+				87835CB81A5A806400EEA262 /* testTableViewCell.swift in Sources */,
 				87CF13941A515E40009A9B2E /* EnshrineViewController.swift in Sources */,
 				879F6C0B1A4C00C700984C1E /* CenterTabBarController.swift in Sources */,
 				875E49F81A58CC9200D8C0BD /* MainPageForTwoCell.swift in Sources */,
@@ -377,10 +396,12 @@
 			files = (
 				877AD88B1A4AC2FB000260A3 /* mici18Tests.swift in Sources */,
 				87EAA5B91A53FA3A00AA8F01 /* MainPageFirstItemCell.swift in Sources */,
+				87835CB91A5A806400EEA262 /* testTableViewCell.swift in Sources */,
 				87835CB01A5A375C00EEA262 /* RightWebViewController.swift in Sources */,
 				87CF13831A50FF56009A9B2E /* LeftSideCell.swift in Sources */,
 				87CF13921A515E2E009A9B2E /* CouponViewController.swift in Sources */,
 				87835CAC1A5A2EC300EEA262 /* RightSideViewController.swift in Sources */,
+				87835CB61A5A781E00EEA262 /* SecondTableTableViewController.swift in Sources */,
 				875E4A051A58CCD900D8C0BD /* MainPageForSixTableViewCell.swift in Sources */,
 				87CF13891A514D8E009A9B2E /* AvatarViewController.swift in Sources */,
 				87CF138C1A515D3D009A9B2E /* GuaranteeViewController.swift in Sources */,
@@ -391,6 +412,7 @@
 				875E49F91A58CC9200D8C0BD /* MainPageForTwoCell.swift in Sources */,
 				875E49FF1A58CCB200D8C0BD /* MainPageForFourCell.swift in Sources */,
 				87EAA5871A53CDDB00AA8F01 /* EditProfileViewController.swift in Sources */,
+				87835CBD1A5A9BFC00EEA262 /* InsuranceIconTableViewCell.swift in Sources */,
 				87CF13981A515E9D009A9B2E /* ContributeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
