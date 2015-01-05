@@ -9,7 +9,7 @@
 import UIKit
 
 
-enum SelectItems {
+ enum SelectItems {
     case avatar
     case guarantee
     case recycleSchedule
@@ -17,11 +17,17 @@ enum SelectItems {
     case enshrine
     case contribute
     case setting
+    case increment
+    case peripheral
+    case market
+    case lifeService
+    case beautifulApp
+    case tipsCollection
 }
 
 
 
-protocol LeftViewControllerDelegate {
+ protocol SideViewControllerDelegate {
      func selectItem(index: SelectItems)
 }
 
@@ -33,7 +39,7 @@ class LeftSideViewController: UIViewController, UITableViewDelegate,UITableViewD
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     
-    var delegate: LeftViewControllerDelegate?
+    var delegate: SideViewControllerDelegate?
     
     private let dataItems = [["每日保障", "回收进程查询", "电子优惠券"],
         ["我的收藏", "我要投稿"], ["设置"]]

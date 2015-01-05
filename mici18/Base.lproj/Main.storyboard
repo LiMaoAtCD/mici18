@@ -280,7 +280,7 @@
         <!--Right Side View Controller-->
         <scene sceneID="Q9J-cB-te5">
             <objects>
-                <viewController storyboardIdentifier="RightSideViewController" id="jFp-kB-rBd" customClass="RightSideViewController" customModule="mici18" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RightSideViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jFp-kB-rBd" customClass="RightSideViewController" customModule="mici18" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Jon-wu-F3H"/>
                         <viewControllerLayoutGuide type="bottom" id="IpW-sT-szI"/>
@@ -292,27 +292,27 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="white" translatesAutoresizingMaskIntoConstraints="NO" id="Qff-ah-9t4">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EDA-NJ-jhn">
+                            <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EDA-NJ-jhn">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" red="1" green="0.8745996439" blue="0.29278939739999998" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wAb-DL-rh0">
+                            <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wAb-DL-rh0">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" red="0.34689989840000002" green="0.37588978449999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UnM-My-W1H">
+                            <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UnM-My-W1H">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" red="1" green="0.2195280513" blue="0.19119985689999999" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zxH-z7-VoV">
+                            <view tag="5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zxH-z7-VoV">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H0e-s5-kCJ">
+                            <view tag="6" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H0e-s5-kCJ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="08V-w6-klM">
+                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="08V-w6-klM">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" red="0.41453717010000002" green="1" blue="0.33261364059999998" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -364,6 +364,8 @@
                                 <exclude reference="08V-w6-klM"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="Ath-Iq-Kjp"/>
+                                <exclude reference="Xvq-Ek-UZp"/>
                                 <exclude reference="D6u-xs-tOg"/>
                                 <exclude reference="e8p-N6-SPC"/>
                                 <exclude reference="eiJ-d9-1yg"/>
@@ -372,6 +374,10 @@
                                 <exclude reference="uEA-CX-p4T"/>
                                 <exclude reference="aWG-ta-M6l"/>
                                 <exclude reference="iZv-E0-L8B"/>
+                                <exclude reference="88U-7B-xCD"/>
+                                <exclude reference="M1W-FM-iZR"/>
+                                <exclude reference="G3g-NZ-Fby"/>
+                                <exclude reference="gfp-oq-YcS"/>
                                 <exclude reference="7QB-7z-18q"/>
                                 <exclude reference="A6H-Ha-wbR"/>
                                 <exclude reference="QEk-qg-qSY"/>
@@ -384,14 +390,8 @@
                                 <exclude reference="qqn-MJ-qrn"/>
                                 <exclude reference="urP-P3-rcR"/>
                                 <exclude reference="v6Y-b6-HQG"/>
-                                <exclude reference="G3g-NZ-Fby"/>
-                                <exclude reference="gfp-oq-YcS"/>
                                 <exclude reference="UWp-D3-y2P"/>
                                 <exclude reference="mTr-Dd-BRJ"/>
-                                <exclude reference="88U-7B-xCD"/>
-                                <exclude reference="M1W-FM-iZR"/>
-                                <exclude reference="Ath-Iq-Kjp"/>
-                                <exclude reference="Xvq-Ek-UZp"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -405,6 +405,8 @@
                                 <include reference="08V-w6-klM"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="Ath-Iq-Kjp"/>
+                                <include reference="Xvq-Ek-UZp"/>
                                 <include reference="D6u-xs-tOg"/>
                                 <include reference="e8p-N6-SPC"/>
                                 <include reference="eiJ-d9-1yg"/>
@@ -413,6 +415,10 @@
                                 <include reference="uEA-CX-p4T"/>
                                 <include reference="aWG-ta-M6l"/>
                                 <include reference="iZv-E0-L8B"/>
+                                <include reference="88U-7B-xCD"/>
+                                <include reference="M1W-FM-iZR"/>
+                                <include reference="G3g-NZ-Fby"/>
+                                <include reference="gfp-oq-YcS"/>
                                 <include reference="7QB-7z-18q"/>
                                 <include reference="A6H-Ha-wbR"/>
                                 <include reference="QEk-qg-qSY"/>
@@ -425,21 +431,80 @@
                                 <include reference="qqn-MJ-qrn"/>
                                 <include reference="urP-P3-rcR"/>
                                 <include reference="v6Y-b6-HQG"/>
-                                <include reference="G3g-NZ-Fby"/>
-                                <include reference="gfp-oq-YcS"/>
                                 <include reference="UWp-D3-y2P"/>
                                 <include reference="mTr-Dd-BRJ"/>
-                                <include reference="88U-7B-xCD"/>
-                                <include reference="M1W-FM-iZR"/>
-                                <include reference="Ath-Iq-Kjp"/>
-                                <include reference="Xvq-Ek-UZp"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outletCollection property="RightItems" destination="08V-w6-klM" collectionClass="NSMutableArray" id="Dit-xS-obm"/>
+                        <outletCollection property="RightItems" destination="EDA-NJ-jhn" collectionClass="NSMutableArray" id="Wh1-Wi-wFB"/>
+                        <outletCollection property="RightItems" destination="wAb-DL-rh0" collectionClass="NSMutableArray" id="CiV-FE-zqR"/>
+                        <outletCollection property="RightItems" destination="UnM-My-W1H" collectionClass="NSMutableArray" id="vpe-rl-8pu"/>
+                        <outletCollection property="RightItems" destination="zxH-z7-VoV" collectionClass="NSMutableArray" id="RRU-IG-jJg"/>
+                        <outletCollection property="RightItems" destination="H0e-s5-kCJ" collectionClass="NSMutableArray" id="vJk-lE-hyU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l66-dT-iX7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1462.5" y="297.75"/>
+            <point key="canvasLocation" x="2005.5" y="356.25"/>
+        </scene>
+        <!--Right Web View Controller-->
+        <scene sceneID="eUe-eU-bXa">
+            <objects>
+                <viewController storyboardIdentifier="RightWebViewController" id="qjh-nw-nxg" customClass="RightWebViewController" customModule="mici18" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mv9-93-rjA"/>
+                        <viewControllerLayoutGuide type="bottom" id="DCR-TR-BQf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bhi-5z-xfY">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TlC-ay-Qqx">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="qjh-nw-nxg" id="JdR-zT-SZO"/>
+                                </connections>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TlC-ay-Qqx" firstAttribute="leading" secondItem="bhi-5z-xfY" secondAttribute="leading" id="Ai1-iX-a8B"/>
+                            <constraint firstItem="TlC-ay-Qqx" firstAttribute="top" secondItem="bhi-5z-xfY" secondAttribute="top" id="h2x-Mo-yYJ"/>
+                            <constraint firstAttribute="trailing" secondItem="TlC-ay-Qqx" secondAttribute="trailing" id="rtw-Ko-68a"/>
+                            <constraint firstItem="DCR-TR-BQf" firstAttribute="top" secondItem="TlC-ay-Qqx" secondAttribute="bottom" id="sVY-BS-DIA"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="TlC-ay-Qqx"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="Ai1-iX-a8B"/>
+                                <exclude reference="h2x-Mo-yYJ"/>
+                                <exclude reference="rtw-Ko-68a"/>
+                                <exclude reference="sVY-BS-DIA"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="TlC-ay-Qqx"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="Ai1-iX-a8B"/>
+                                <include reference="h2x-Mo-yYJ"/>
+                                <include reference="rtw-Ko-68a"/>
+                                <include reference="sVY-BS-DIA"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="TlC-ay-Qqx" id="jfv-vv-vdz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YqG-Vd-DzE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3013.5" y="356.25"/>
         </scene>
         <!--Setting View Controller-->
         <scene sceneID="5Bq-rh-JMA">

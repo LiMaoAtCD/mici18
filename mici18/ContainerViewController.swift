@@ -14,7 +14,7 @@ enum SlideOutState {
     case RightPanelExpanded
 }
 
-class ContainerViewController: UIViewController, LeftViewControllerDelegate {
+class ContainerViewController: UIViewController, SideViewControllerDelegate {
     
     var centerVC: CenterTabBarController!
     let screenBounds = UIScreen.mainScreen().bounds
@@ -110,6 +110,7 @@ class ContainerViewController: UIViewController, LeftViewControllerDelegate {
             
         } else {
             rightViewController = UIStoryboard.rightViewController()
+            rightViewController?.delegate = self
             self.view.insertSubview(rightViewController!.view, atIndex: 0)
             self.addChildViewController(rightViewController!)
         }
@@ -150,8 +151,7 @@ class ContainerViewController: UIViewController, LeftViewControllerDelegate {
                     if let tap = self.tapForSlide {
                         self.centerVC.view.removeGestureRecognizer(tap)
                     }
-                    
-                    
+            
                 }
         }
     }
@@ -245,7 +245,7 @@ class ContainerViewController: UIViewController, LeftViewControllerDelegate {
         
         switch item {
         case .avatar:
-            NSNotificationCenter.defaultCenter().postNotificationName("ALNavatar", object: nil)
+            NSNotificationCenter.defaultCenter().postNotificationName("ALNavatar", object:nil)
         case .guarantee:
             NSNotificationCenter.defaultCenter().postNotificationName("ALNguarantee", object: nil)
         case .recycleSchedule:
@@ -258,6 +258,18 @@ class ContainerViewController: UIViewController, LeftViewControllerDelegate {
             NSNotificationCenter.defaultCenter().postNotificationName("ALNcoupon", object: nil)
         case .contribute:
             NSNotificationCenter.defaultCenter().postNotificationName("ALNcontribute", object: nil)
+        case .increment:
+            NSNotificationCenter.defaultCenter().postNotificationName("ALNincrement", object: nil)
+        case .peripheral:
+            NSNotificationCenter.defaultCenter().postNotificationName("ALNperipheral", object: nil)
+        case .market:
+            NSNotificationCenter.defaultCenter().postNotificationName("ALNmarket", object: nil)
+        case .lifeService:
+            NSNotificationCenter.defaultCenter().postNotificationName("ALNlifeService", object: nil)
+        case .beautifulApp:
+            NSNotificationCenter.defaultCenter().postNotificationName("ALNbeautifulApp", object: nil)
+        case .tipsCollection:
+            NSNotificationCenter.defaultCenter().postNotificationName("ALNtipsCollection", object: nil)
         default:
             break
         }

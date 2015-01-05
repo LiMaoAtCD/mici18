@@ -32,6 +32,14 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "ALNcontribute", name: "ALNcontribute", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "ALNsetting", name: "ALNsetting", object: nil)
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "ALNincrement", name: "ALNincrement", object: nil)
+         NSNotificationCenter.defaultCenter().addObserver(self, selector: "ALNperipheral", name: "ALNperipheral", object: nil)
+         NSNotificationCenter.defaultCenter().addObserver(self, selector: "ALNmarket", name: "ALNmarket", object: nil)
+         NSNotificationCenter.defaultCenter().addObserver(self, selector: "ALNlifeService", name: "ALNlifeService", object: nil)
+         NSNotificationCenter.defaultCenter().addObserver(self, selector: "ALNbeautifulApp", name: "ALNbeautifulApp", object: nil)
+         NSNotificationCenter.defaultCenter().addObserver(self, selector: "ALNtipsCollection", name: "ALNtipsCollection", object: nil)
+        
+        
         
         
         
@@ -249,6 +257,11 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     // MARK: Container Methods
     
+    
+
+    
+    
+    
     func commonSettings(vc:UIViewController) {
         self.navigationController?.popToRootViewControllerAnimated(false)
         self.navigationController?.tabBarController?.selectedIndex = 0
@@ -261,6 +274,8 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
        
     }
+    
+    
     
     func ALNavatar(){
         var avatarVC = sb.instantiateViewControllerWithIdentifier("AvatarViewController") as AvatarViewController
@@ -312,6 +327,44 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.navigationController?.pushViewController(settingVC, animated: false)
         
     }
+    
+    func ALNincrement(){
+        
+        rightSetting(1)
+
+    }
+    
+    func ALNperipheral() {
+        
+        rightSetting(2)
+    }
+    func ALNmarket(){
+        rightSetting(3)
+    }
+    
+    
+    func ALNlifeService() {
+        rightSetting(4)
+    }
+    
+    func ALNbeautifulApp(){
+        rightSetting(5)
+    }
+    func ALNtipsCollection(){
+        rightSetting(6)
+    }
+    
+    
+    func rightSetting(type: Int) {
+        
+    var VC = sb.instantiateViewControllerWithIdentifier("RightWebViewController") as RightWebViewController
+    VC.type = type
+    commonSettings(VC)
+    self.navigationController?.pushViewController(VC, animated: false)
+
+    }
+    
+
 
     
     
