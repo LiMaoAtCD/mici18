@@ -43,6 +43,8 @@
 		879F6C0B1A4C00C700984C1E /* CenterTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879F6C0A1A4C00C700984C1E /* CenterTabBarController.swift */; };
 		87BEA90C1A5BC8C6006B3139 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BEA90B1A5BC8C6006B3139 /* LoginViewController.swift */; };
 		87BEA90D1A5BC8C6006B3139 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BEA90B1A5BC8C6006B3139 /* LoginViewController.swift */; };
+		87BEA90F1A5BD557006B3139 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BEA90E1A5BD557006B3139 /* RegisterViewController.swift */; };
+		87BEA9101A5BD557006B3139 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BEA90E1A5BD557006B3139 /* RegisterViewController.swift */; };
 		87CF13821A50FF56009A9B2E /* LeftSideCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CF13801A50FF56009A9B2E /* LeftSideCell.swift */; };
 		87CF13831A50FF56009A9B2E /* LeftSideCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CF13801A50FF56009A9B2E /* LeftSideCell.swift */; };
 		87CF13841A50FF56009A9B2E /* LeftSideCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87CF13811A50FF56009A9B2E /* LeftSideCell.xib */; };
@@ -106,6 +108,7 @@
 		8785A55F1A4B117600A9C1E3 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		879F6C0A1A4C00C700984C1E /* CenterTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterTabBarController.swift; sourceTree = "<group>"; };
 		87BEA90B1A5BC8C6006B3139 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		87BEA90E1A5BD557006B3139 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		87CF13801A50FF56009A9B2E /* LeftSideCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftSideCell.swift; sourceTree = "<group>"; };
 		87CF13811A50FF56009A9B2E /* LeftSideCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LeftSideCell.xib; sourceTree = "<group>"; };
 		87CF13871A514D8E009A9B2E /* AvatarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarViewController.swift; sourceTree = "<group>"; };
@@ -258,6 +261,7 @@
 				87CF13961A515E9D009A9B2E /* ContributeViewController.swift */,
 				87CF13991A515EAF009A9B2E /* SettingViewController.swift */,
 				87BEA90B1A5BC8C6006B3139 /* LoginViewController.swift */,
+				87BEA90E1A5BD557006B3139 /* RegisterViewController.swift */,
 			);
 			name = LeftViewControllers;
 			sourceTree = "<group>";
@@ -395,6 +399,7 @@
 				87835CB81A5A806400EEA262 /* testTableViewCell.swift in Sources */,
 				87CF13941A515E40009A9B2E /* EnshrineViewController.swift in Sources */,
 				879F6C0B1A4C00C700984C1E /* CenterTabBarController.swift in Sources */,
+				87BEA90F1A5BD557006B3139 /* RegisterViewController.swift in Sources */,
 				875E49F81A58CC9200D8C0BD /* MainPageForTwoCell.swift in Sources */,
 				87EAA5B81A53FA3A00AA8F01 /* MainPageFirstItemCell.swift in Sources */,
 			);
@@ -418,6 +423,7 @@
 				87CF138C1A515D3D009A9B2E /* GuaranteeViewController.swift in Sources */,
 				87CF139B1A515EAF009A9B2E /* SettingViewController.swift in Sources */,
 				87835CC01A5B7F2700EEA262 /* SplashViewController.swift in Sources */,
+				87BEA9101A5BD557006B3139 /* RegisterViewController.swift in Sources */,
 				87CF138F1A515E1C009A9B2E /* RecycleScheduleViewController.swift in Sources */,
 				87835CB31A5A660500EEA262 /* LeftSideViewController.swift in Sources */,
 				87CF13951A515E40009A9B2E /* EnshrineViewController.swift in Sources */,

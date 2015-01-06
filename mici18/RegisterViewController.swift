@@ -1,5 +1,5 @@
 //
-//  LoginViewController.swift
+//  RegisterViewController.swift
 //  mici18
 //
 //  Created by AlienLi on 15/1/6.
@@ -8,19 +8,12 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class RegisterViewController: UIViewController {
 
-    @IBOutlet weak var registerButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-        
-        self.title = "登录"
-        
-        
-        registerButton.addTarget(self, action: "register:", forControlEvents: UIControlEvents.TouchUpInside)
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,13 +21,6 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    func register(button: UIButton) {
-        let sb = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-        
-        let registerVC = sb.instantiateViewControllerWithIdentifier("RegisterViewController") as? RegisterViewController
-        self.navigationController?.pushViewController(registerVC!, animated: true)
-    }
 
     /*
     // MARK: - Navigation
