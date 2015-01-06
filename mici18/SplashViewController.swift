@@ -25,17 +25,35 @@ class SplashViewController: UIViewController,UIScrollViewDelegate {
         imageView2.image = UIImage(named: "test")
         imageView3.image = UIImage(named: "test")
         
+        
+        var button: UIButton  = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
+        
+        button.addTarget(self, action: "dismissViewController:", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        button.frame = CGRectMake(self.view.bounds.width * 2, self.view.bounds.height / 2, self.view.bounds.width , self.view.bounds.height/2)
+        
         self.scrollView.addSubview(imageView1)
         self.scrollView.addSubview(imageView2)
         self.scrollView.addSubview(imageView3)
-        
+        self.scrollView.addSubview(button)
+
+        self.scrollView.delegate = self
         self.scrollView.contentSize = CGSizeMake(self.view.bounds.width * 3, self.view.bounds.height)
         
-        
-
     }
     
+    func dismissViewController(button: UIButton) {
+        UIView.animateWithDuration(1.0, animations: { () -> Void in
+            self.scrollView.transform = CGAffineTransformMakeScale(5.0, 5.0)
+        }) { (finished) -> Void in
+            if finished {
+                self.dismissViewControllerAnimated(false, completion: nil)
+            }
+            
+        }    }
+    
     func scrollViewDidScroll(scrollView: UIScrollView) {
+        println("\(scrollView.bounds.origin.x)")
         if scrollView.bounds.origin.x < self.view.bounds.width {
             self.pageControl.currentPage = 0
         } else if scrollView.bounds.origin.x >= self.view.bounds.width &&

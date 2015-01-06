@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6724" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -1953,74 +1953,69 @@
                         <viewControllerLayoutGuide type="bottom" id="S4R-hf-jFI"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Cix-lV-zVN">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7n-Xg-MHN">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <subviews>
-                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="AQf-Ig-CG6">
-                                        <rect key="frame" x="-19" y="-18" width="39" height="37"/>
-                                        <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <color key="currentPageIndicatorTintColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    </pageControl>
-                                </subviews>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="AQf-Ig-CG6">
+                                <rect key="frame" x="-19" y="-18" width="39" height="37"/>
                                 <constraints>
-                                    <constraint firstItem="AQf-Ig-CG6" firstAttribute="top" secondItem="p7n-Xg-MHN" secondAttribute="centerY" multiplier="1.5" constant="100" id="3el-fb-FOg"/>
-                                    <constraint firstAttribute="trailing" secondItem="AQf-Ig-CG6" secondAttribute="trailing" constant="180" id="IHP-AS-n6y"/>
-                                    <constraint firstItem="AQf-Ig-CG6" firstAttribute="leading" secondItem="p7n-Xg-MHN" secondAttribute="leading" constant="181" id="U12-AU-yvK"/>
-                                    <constraint firstAttribute="bottom" secondItem="AQf-Ig-CG6" secondAttribute="bottom" constant="32" id="dOi-RK-KsP"/>
+                                    <constraint firstAttribute="height" constant="37" id="kQE-1R-aAN"/>
+                                    <constraint firstAttribute="width" constant="51" id="lxK-0h-nbn"/>
                                 </constraints>
+                                <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="currentPageIndicatorTintColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 <variation key="default">
-                                    <mask key="subviews">
-                                        <exclude reference="AQf-Ig-CG6"/>
-                                    </mask>
                                     <mask key="constraints">
-                                        <exclude reference="3el-fb-FOg"/>
-                                        <exclude reference="IHP-AS-n6y"/>
-                                        <exclude reference="U12-AU-yvK"/>
-                                        <exclude reference="dOi-RK-KsP"/>
+                                        <exclude reference="kQE-1R-aAN"/>
+                                        <exclude reference="lxK-0h-nbn"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="subviews">
-                                        <include reference="AQf-Ig-CG6"/>
-                                    </mask>
                                     <mask key="constraints">
-                                        <include reference="3el-fb-FOg"/>
-                                        <include reference="IHP-AS-n6y"/>
-                                        <include reference="U12-AU-yvK"/>
-                                        <include reference="dOi-RK-KsP"/>
+                                        <include reference="kQE-1R-aAN"/>
+                                        <include reference="lxK-0h-nbn"/>
                                     </mask>
                                 </variation>
-                            </scrollView>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="S4R-hf-jFI" firstAttribute="top" secondItem="p7n-Xg-MHN" secondAttribute="bottom" id="BeE-68-3Ox"/>
+                            <constraint firstItem="AQf-Ig-CG6" firstAttribute="centerX" secondItem="Cix-lV-zVN" secondAttribute="centerX" id="ESh-tw-Old"/>
                             <constraint firstAttribute="trailing" secondItem="p7n-Xg-MHN" secondAttribute="trailing" id="O0t-kL-46E"/>
                             <constraint firstItem="p7n-Xg-MHN" firstAttribute="leading" secondItem="Cix-lV-zVN" secondAttribute="leading" id="cJp-Qi-f4E"/>
                             <constraint firstItem="p7n-Xg-MHN" firstAttribute="top" secondItem="Cix-lV-zVN" secondAttribute="top" id="mix-7i-lgI"/>
+                            <constraint firstItem="S4R-hf-jFI" firstAttribute="top" secondItem="AQf-Ig-CG6" secondAttribute="bottom" constant="30" id="tf3-th-Yuz"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="p7n-Xg-MHN"/>
+                                <exclude reference="AQf-Ig-CG6"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="O0t-kL-46E"/>
                                 <exclude reference="cJp-Qi-f4E"/>
                                 <exclude reference="mix-7i-lgI"/>
+                                <exclude reference="ESh-tw-Old"/>
                                 <exclude reference="BeE-68-3Ox"/>
+                                <exclude reference="tf3-th-Yuz"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="p7n-Xg-MHN"/>
+                                <include reference="AQf-Ig-CG6"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="O0t-kL-46E"/>
                                 <include reference="cJp-Qi-f4E"/>
                                 <include reference="mix-7i-lgI"/>
+                                <include reference="ESh-tw-Old"/>
                                 <include reference="BeE-68-3Ox"/>
+                                <include reference="tf3-th-Yuz"/>
                             </mask>
                         </variation>
                     </view>
