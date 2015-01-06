@@ -14,7 +14,10 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     let sb: UIStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
     
+    let userDefault: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+
     var mainPageItems: [AnyObject]?
+    
 
     @IBOutlet weak var mainPageList: UITableView!
     
@@ -24,29 +27,14 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         // Do any additional setup after loading the view.
         
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "ALNavatar", name: "ALNavatar", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "ALNguarantee", name: "ALNguarantee", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "ALNrecycleSchedule", name: "ALNrecycleSchedule", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "ALNcoupon", name: "ALNcoupon", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "ALNenshrine", name: "ALNenshrine", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "ALNcontribute", name: "ALNcontribute", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "ALNsetting", name: "ALNsetting", object: nil)
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "ALNincrement", name: "ALNincrement", object: nil)
-         NSNotificationCenter.defaultCenter().addObserver(self, selector: "ALNperipheral", name: "ALNperipheral", object: nil)
-         NSNotificationCenter.defaultCenter().addObserver(self, selector: "ALNmarket", name: "ALNmarket", object: nil)
-         NSNotificationCenter.defaultCenter().addObserver(self, selector: "ALNlifeService", name: "ALNlifeService", object: nil)
-         NSNotificationCenter.defaultCenter().addObserver(self, selector: "ALNbeautifulApp", name: "ALNbeautifulApp", object: nil)
-         NSNotificationCenter.defaultCenter().addObserver(self, selector: "ALNtipsCollection", name: "ALNtipsCollection", object: nil)
+        self.registerNotifications()
         
         
-        var userDefault: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        let isLaunched = userDefault.boolForKey("ALNIsLaunched")
         
-//        let isLaunched = userDefault.boolForKey("ALNIsLaunched")
-//        
-//        if !isLaunched {
-//            userDefault.setBool(true, forKey: "ALNIsLaunched")
-//            userDefault.synchronize()
+        if !isLaunched {
+            userDefault.setBool(true, forKey: "ALNIsLaunched")
+            userDefault.synchronize()
         
             let window = UIApplication.sharedApplication().delegate?.window!
             
@@ -58,16 +46,8 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 println("splash is fucked")
             }
             
-//        }
-        
-        
-        var account = userDefault.objectForKey("ALNAccount") as String?
-        
-        if let acc = account {
-            
-        } else {
-            
         }
+        
         
         
         
@@ -99,28 +79,6 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
         self.title = "首页"
         
-        mainPageItems = [
-            [
-                ["http://www.image.com","http://www.click.com"],
-                ["http://www.image.com","http://www.click.com"]
-            ],
-            [
-                ["http://www.image.com","http://www.click.com"],
-                ["http://www.image.com","http://www.click.com"],
-                ["http://www.image.com","http://www.click.com"],
-                ["http://www.image.com","http://www.click.com"]
-            ],
-            [
-                ["http://www.image.com","http://www.click.com"],
-                ["http://www.image.com","http://www.click.com"],
-                ["http://www.image.com","http://www.click.com"],
-                ["http://www.image.com","http://www.click.com"],
-                ["http://www.image.com","http://www.click.com"],
-                ["http://www.image.com","http://www.click.com"]
-
-            ]
-            
-        ]
         
         self.mainPageList.tableFooterView = UIView()
     }
@@ -133,9 +91,46 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.navigationController?.navigationBar.shadowImage = nil
         self.navigationController?.navigationBar.translucent = false
         
+        //
+        var account = userDefault.objectForKey("ALNAccount") as String?
+        
+        if let acc = account {
+            
+            //已有账号登录
+        } else {
+            //没有
+            
+        }
+        
+//        mainPageItems = [
+//            [
+//                ["http://www.image.com","http://www.click.com"],
+//                ["http://www.image.com","http://www.click.com"]
+//            ],
+//            [
+//                ["http://www.image.com","http://www.click.com"],
+//                ["http://www.image.com","http://www.click.com"],
+//                ["http://www.image.com","http://www.click.com"],
+//                ["http://www.image.com","http://www.click.com"]
+//            ],
+//            [
+//                ["http://www.image.com","http://www.click.com"],
+//                ["http://www.image.com","http://www.click.com"],
+//                ["http://www.image.com","http://www.click.com"],
+//                ["http://www.image.com","http://www.click.com"],
+//                ["http://www.image.com","http://www.click.com"],
+//                ["http://www.image.com","http://www.click.com"]
+//                
+//            ]
+//            
+//        ]
+        
+
+
+        
     }
     
-    //MARK: tableView dataSource & delegate
+    // MARK: tableView dataSource & delegate
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -143,7 +138,11 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return mainPageItems!.count + 1
+        if let items = mainPageItems {
+            return items.count + 1
+        }else {
+            return 0
+        }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -270,15 +269,60 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     
+    // MARK:  SidePanel
+    
+    func showLeftPanel(sender: AnyObject) {
+        NSNotificationCenter.defaultCenter().postNotificationName("toggleLeftPanel", object: nil)
+    }
+
+    func showRightPanel(sender: AnyObject) {
+        NSNotificationCenter.defaultCenter().postNotificationName("toggleRightPanel", object: nil)
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+    
+    // MARK: Notifications
+    
+    func registerNotifications(){
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "ALNavatar", name: "ALNavatar", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "ALNguarantee", name: "ALNguarantee", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "ALNrecycleSchedule", name: "ALNrecycleSchedule", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "ALNcoupon", name: "ALNcoupon", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "ALNenshrine", name: "ALNenshrine", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "ALNcontribute", name: "ALNcontribute", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "ALNsetting", name: "ALNsetting", object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "ALNincrement", name: "ALNincrement", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "ALNperipheral", name: "ALNperipheral", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "ALNmarket", name: "ALNmarket", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "ALNlifeService", name: "ALNlifeService", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "ALNbeautifulApp", name: "ALNbeautifulApp", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "ALNtipsCollection", name: "ALNtipsCollection", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "ALNLogin", name: "ALNLogin", object: nil)
+    }
+    
     
     // MARK: Container Methods
     
-    
-
-    
-    
-    
     func commonSettings(vc:UIViewController) {
+        
         self.navigationController?.popToRootViewControllerAnimated(false)
         self.navigationController?.tabBarController?.selectedIndex = 0
         
@@ -287,11 +331,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.navigationController?.navigationBar.setBackgroundImage(nil, forBarMetrics: UIBarMetrics.Default)
         self.navigationController?.navigationBar.shadowImage = nil
         self.navigationController?.navigationBar.translucent = false
-        
-       
     }
-    
-    
     
     func ALNavatar(){
         var avatarVC = sb.instantiateViewControllerWithIdentifier("AvatarViewController") as AvatarViewController
@@ -303,14 +343,16 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.navigationController?.pushViewController(avatarVC, animated: false)
         
     }
+    
     func ALNguarantee(){
-      
+        
         var guaranteeVC = sb.instantiateViewControllerWithIdentifier("GuaranteeViewController") as GuaranteeViewController
         commonSettings(guaranteeVC)
-
+        
         self.navigationController?.pushViewController(guaranteeVC, animated: false)
         
     }
+    
     func ALNrecycleSchedule(){
         
         var recycleVC = sb.instantiateViewControllerWithIdentifier("RecycleScheduleViewController") as RecycleScheduleViewController
@@ -318,25 +360,27 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.navigationController?.pushViewController(recycleVC, animated: false)
         
     }
-
+    
     func ALNcoupon(){
         var couponVC = sb.instantiateViewControllerWithIdentifier("CouponViewController") as CouponViewController
         commonSettings(couponVC)
         self.navigationController?.pushViewController(couponVC, animated: false)
     }
-
+    
     func ALNenshrine(){
         var enshrineVC = sb.instantiateViewControllerWithIdentifier("EnshrineViewController") as EnshrineViewController
         commonSettings(enshrineVC)
         self.navigationController?.pushViewController(enshrineVC, animated: false)
         
     }
+    
     func ALNcontribute(){
         var ContributeVC = sb.instantiateViewControllerWithIdentifier("ContributeViewController") as ContributeViewController
         commonSettings(ContributeVC)
         self.navigationController?.pushViewController(ContributeVC, animated: false)
         
     }
+    
     func ALNsetting(){
         var settingVC = sb.instantiateViewControllerWithIdentifier("SettingViewController") as SettingViewController
         commonSettings(settingVC)
@@ -344,10 +388,18 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
     }
     
+    func ALNLogin() {
+        var loginVC = sb.instantiateViewControllerWithIdentifier("LoginViewController") as LoginViewController
+        commonSettings(loginVC)
+        self.navigationController?.pushViewController(loginVC, animated: false)
+    }
+    
+    
+    
     func ALNincrement(){
         
         rightSetting(1)
-
+        
     }
     
     func ALNperipheral() {
@@ -370,45 +422,23 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         rightSetting(6)
     }
     
-    
     func rightSetting(type: Int) {
         
-    var VC = sb.instantiateViewControllerWithIdentifier("RightWebViewController") as RightWebViewController
-    VC.type = type
-    commonSettings(VC)
-    self.navigationController?.pushViewController(VC, animated: false)
-
+        var VC = sb.instantiateViewControllerWithIdentifier("RightWebViewController") as RightWebViewController
+        VC.type = type
+        commonSettings(VC)
+        self.navigationController?.pushViewController(VC, animated: false)
+        
     }
     
-
-
     
     
     
     
-    func showLeftPanel(sender: AnyObject) {
-        NSNotificationCenter.defaultCenter().postNotificationName("toggleLeftPanel", object: nil)
-    }
+    
 
-    func showRightPanel(sender: AnyObject) {
-        NSNotificationCenter.defaultCenter().postNotificationName("toggleRightPanel", object: nil)
-    }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
-    }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
+
+
+

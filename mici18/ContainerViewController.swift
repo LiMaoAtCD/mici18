@@ -270,6 +270,8 @@ class ContainerViewController: UIViewController, SideViewControllerDelegate {
             NSNotificationCenter.defaultCenter().postNotificationName("ALNbeautifulApp", object: nil)
         case .tipsCollection:
             NSNotificationCenter.defaultCenter().postNotificationName("ALNtipsCollection", object: nil)
+        case .login:
+            NSNotificationCenter.defaultCenter().postNotificationName("ALNLogin", object: nil)
         default:
             break
         }

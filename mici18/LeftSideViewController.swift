@@ -23,6 +23,8 @@ import UIKit
     case lifeService
     case beautifulApp
     case tipsCollection
+    
+    case login
 }
 
 
@@ -33,9 +35,16 @@ import UIKit
 
 class LeftSideViewController: UIViewController, UITableViewDelegate,UITableViewDataSource {
 
-    @IBOutlet weak var creditsLabel: UILabel!
-    @IBOutlet weak var levelLabel: UILabel!
+
+    @IBOutlet weak var loginView: UIView!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var levelLabel: UILabel!
+    
+    @IBOutlet weak var signButton: UIButton!
+    
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var gradeLabel: UILabel!
+    
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     
@@ -59,8 +68,12 @@ class LeftSideViewController: UIViewController, UITableViewDelegate,UITableViewD
         self.tableView.registerNib(nib, forCellReuseIdentifier: "LeftCell")
         
         
+        self.loginButton.addTarget(self, action: "clickForLogin:", forControlEvents: UIControlEvents.TouchUpInside)
+        
         
     }
+    
+    
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -148,7 +161,9 @@ class LeftSideViewController: UIViewController, UITableViewDelegate,UITableViewD
         delegate?.selectItem(SelectItems.avatar)
 
     }
-    
+    func clickForLogin(button: UIButton) {
+        delegate?.selectItem(SelectItems.login)
+    }
     
   
     

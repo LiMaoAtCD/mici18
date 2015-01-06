@@ -21,12 +21,12 @@ class RightWebViewController: UIViewController, UIWebViewDelegate {
         
        
         let urlArray:[String] = [
-            "http://192.168.2.253/demo/miw03/web/weblist.html?list=qualityGuarantee",
-            "http://192.168.2.253/demo/miw03/web/weblist.html?list=phoneCase",
-            "http://192.168.2.253/demo/miw03/web/weblist.html?list=pointMall",
-            "http://192.168.2.253/demo/miw03/web/weblist.html?list=lifeService",
-            "http://192.168.2.253/demo/miw03/web/weblist.html?list=niceApp",
-            "http://192.168.2.253/demo/miw03/web/weblist.html?list=trickSet"
+            "http://192.168.2.252/demo/miw03/web/weblist.html?list=qualityGuarantee",
+            "http://192.168.2.252/demo/miw03/web/weblist.html?list=phoneCase",
+            "http://192.168.2.252/demo/miw03/web/weblist.html?list=pointMall",
+            "http://192.168.2.252/demo/miw03/web/weblist.html?list=lifeService",
+            "http://192.168.2.252/demo/miw03/web/weblist.html?list=niceApp",
+            "http://192.168.2.252/demo/miw03/web/weblist.html?list=trickSet"
         ]
         if let index = type {
             var url = NSURL(string: urlArray[index - 1])
