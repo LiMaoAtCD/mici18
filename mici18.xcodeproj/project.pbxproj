@@ -36,6 +36,8 @@
 		87835CB91A5A806400EEA262 /* testTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87835CB71A5A806400EEA262 /* testTableViewCell.swift */; };
 		87835CBC1A5A9BFC00EEA262 /* InsuranceIconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87835CBB1A5A9BFC00EEA262 /* InsuranceIconTableViewCell.swift */; };
 		87835CBD1A5A9BFC00EEA262 /* InsuranceIconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87835CBB1A5A9BFC00EEA262 /* InsuranceIconTableViewCell.swift */; };
+		87835CBF1A5B7F2700EEA262 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87835CBE1A5B7F2700EEA262 /* SplashViewController.swift */; };
+		87835CC01A5B7F2700EEA262 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87835CBE1A5B7F2700EEA262 /* SplashViewController.swift */; };
 		8785A55C1A4B0EF300A9C1E3 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8785A55B1A4B0EF300A9C1E3 /* ContainerViewController.swift */; };
 		8785A5601A4B117600A9C1E3 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8785A55F1A4B117600A9C1E3 /* FirstViewController.swift */; };
 		879F6C0B1A4C00C700984C1E /* CenterTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879F6C0A1A4C00C700984C1E /* CenterTabBarController.swift */; };
@@ -97,6 +99,7 @@
 		87835CB41A5A781E00EEA262 /* SecondTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondTableTableViewController.swift; sourceTree = "<group>"; };
 		87835CB71A5A806400EEA262 /* testTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = testTableViewCell.swift; sourceTree = "<group>"; };
 		87835CBB1A5A9BFC00EEA262 /* InsuranceIconTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsuranceIconTableViewCell.swift; sourceTree = "<group>"; };
+		87835CBE1A5B7F2700EEA262 /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		8785A55B1A4B0EF300A9C1E3 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		8785A55F1A4B117600A9C1E3 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		879F6C0A1A4C00C700984C1E /* CenterTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterTabBarController.swift; sourceTree = "<group>"; };
@@ -218,6 +221,7 @@
 				879F6C0A1A4C00C700984C1E /* CenterTabBarController.swift */,
 				8785A55F1A4B117600A9C1E3 /* FirstViewController.swift */,
 				87835CB11A5A660500EEA262 /* LeftSideViewController.swift */,
+				87835CBE1A5B7F2700EEA262 /* SplashViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -379,6 +383,7 @@
 				87CF13881A514D8E009A9B2E /* AvatarViewController.swift in Sources */,
 				87CF138E1A515E1C009A9B2E /* RecycleScheduleViewController.swift in Sources */,
 				87CF13911A515E2E009A9B2E /* CouponViewController.swift in Sources */,
+				87835CBF1A5B7F2700EEA262 /* SplashViewController.swift in Sources */,
 				87835CAF1A5A375C00EEA262 /* RightWebViewController.swift in Sources */,
 				87CF13821A50FF56009A9B2E /* LeftSideCell.swift in Sources */,
 				87835CAB1A5A2EC300EEA262 /* RightSideViewController.swift in Sources */,
@@ -406,6 +411,7 @@
 				87CF13891A514D8E009A9B2E /* AvatarViewController.swift in Sources */,
 				87CF138C1A515D3D009A9B2E /* GuaranteeViewController.swift in Sources */,
 				87CF139B1A515EAF009A9B2E /* SettingViewController.swift in Sources */,
+				87835CC01A5B7F2700EEA262 /* SplashViewController.swift in Sources */,
 				87CF138F1A515E1C009A9B2E /* RecycleScheduleViewController.swift in Sources */,
 				87835CB31A5A660500EEA262 /* LeftSideViewController.swift in Sources */,
 				87CF13951A515E40009A9B2E /* EnshrineViewController.swift in Sources */,

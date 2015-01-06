@@ -57,6 +57,7 @@ class SecondTableTableViewController: UITableViewController {
             cell.getGiftButton.addTarget(self, action: "getGift:", forControlEvents: UIControlEvents.TouchUpInside)
             
             return cell
+            
         } else  if indexPath.section == 1 {
             let cell = tableView.dequeueReusableCellWithIdentifier("InsuranceIconTableViewCell", forIndexPath: indexPath) as InsuranceIconTableViewCell
             

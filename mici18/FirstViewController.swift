@@ -40,10 +40,26 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
          NSNotificationCenter.defaultCenter().addObserver(self, selector: "ALNtipsCollection", name: "ALNtipsCollection", object: nil)
         
         
-        
-        
-        
         var userDefault: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        
+//        let isLaunched = userDefault.boolForKey("ALNIsLaunched")
+//        
+//        if !isLaunched {
+//            userDefault.setBool(true, forKey: "ALNIsLaunched")
+//            userDefault.synchronize()
+        
+            let window = UIApplication.sharedApplication().delegate?.window!
+            
+            let splashVC = sb.instantiateViewControllerWithIdentifier("SplashViewController") as? SplashViewController
+            
+            if let splash = splashVC {
+                window?.rootViewController?.presentViewController(splash, animated: false, completion: nil)
+            } else {
+                println("splash is fucked")
+            }
+            
+//        }
+        
         
         var account = userDefault.objectForKey("ALNAccount") as String?
         
